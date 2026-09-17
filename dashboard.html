@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Anlageplanung V4.4</title>
+    <meta name="description" content="Robustes Portfolio V4.4 – Bestehende Portfolios importieren und Zuzahlungen planen">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles_v4.4.css">
+
+    <!-- PDF Generation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+    <!-- PDF.js for reading uploaded PDFs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <!-- SheetJS for Excel/XLSX import -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+    <header class="mlp-header">
+        <div class="header-container">
+            <div class="header-title-row">
+                <div>
+                    <h1>Robustes Portfolio</h1>
+                    <p class="subtitle">V4.4 · Bestehendes Portfolio importieren &amp; Zuzahlungen planen</p>
+                </div>
+                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                    <!-- Depot Upload Button (CSV / XLSX / PDF) -->
+                    <label id="depot-upload-label" class="btn-pdf-upload" title="Depot-CSV oder Excel importieren (auch PDF möglich)" for="depot-upload-input">
+                        <input type="file" id="depot-upload-input" accept=".csv,.xlsx,.xls,.pdf" style="display:none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;flex-shrink:0;">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="12" y1="18" x2="12" y2="12"></line>
+                            <line x1="9" y1="15" x2="15" y2="15"></line>
+                        </svg>
+                        <span id="depot-upload-label-text">Depot laden (CSV / Excel)</span>
+                    </label>
+                    <!-- Depot-Bibliothek Button -->
+                    <button id="library-open-btn" class="btn-help" title="Depot-Bibliothek öffnen" style="background:linear-gradient(135deg,#1e3a5f,#2563eb);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                        Bibliothek
+                    </button>
+                    <button id="help-btn" class="btn-help" title="Benutzerhandbuch öffnen" aria-label="Hilfe">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        Hilfe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Two-column app layout: Dashboard + Portfolio Panel -->
+    <div class="app-layout">
+
+        <!-- LEFT: Main Dashboard -->
+        <main class="dashboard-column">
+            <div class="content-container">
+
+                <section class="intro-section">
+                    <p class="intro-text">
+                        Ein Vermögensaufbau erfordert eine strukturierte Zuordnung von Kapital in unterschiedliche
+                        Anlageklassen und Strategien, abhängig von Ihrem persönlichen Anlagehorizont (Zeitphasen).
+                    </p>
+                </section>
+
+                <!-- The Interactive Matrix -->
+                <section class="portfolio-matrix">
+                    <div class="matrix-header">
+                        <h2>Zeitphasen und Zielzeiträume</h2>
+                        <p>Klicken Sie auf eine Zeitphase, um die passenden Managementansätze und Anlageklassen im
+                            Portfolio hervorzuheben.</p>
+                        <div class="fund-search-container" style="position: relative; margin-top: 15px;">
+                            <input type="text" id="fund-search-input" placeholder="Nach Fonds oder WKN suchen..." autocomplete="off">
+                            <ul id="fund-search-results" class="search-results-popup"></ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Navigation -->
+                    <div class="timeline-nav" id="timeline-container">
+                        <!-- Javascript will populate timeline buttons -->
+                    </div>
+
+                    <!-- Interactive Row: Tower & Detail Card & Finance Panel -->
+                    <div class="phase-interaction-area">
+
+                        <div class="tower-wrapper">
+                            <h3>Managementansätze</h3>
+                            <!-- V4 Layout: Main Tower + Side Tower -->
+                            <div class="tower-layout-wrapper">
+                                <!-- Main Tower -->
+                                <div class="management-tower" id="tower-container">
+                                    <!-- Layer DOM elements will be injected via JS -->
+                                </div>
+
+                                <!-- Side Tower for Tagesgeld -->
+                                <div class="side-tower-container" id="side-tower-container">
+                                    <!-- Tagesgeld element will be injected here via JS -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detailed Phase Info -->
+                        <div class="phase-detail-card" id="phase-detail-card">
+                            <div class="phase-header">
+                                <h3 id="detail-phase-name">Alle Phasen anzeigen</h3>
+                            </div>
+                            <div class="phase-content">
+                                <div class="detail-group">
+                                    <span class="detail-label">Zielzeitraum:</span>
+                                    <span class="detail-value" id="detail-duration">Gesamter Anlagehorizont</span>
+                                </div>
+                                <div class="detail-group">
+                                    <span class="detail-label">Anlageklasse:</span>
+                                    <span class="detail-value" id="detail-asset-class">Alle verfügbaren
+                                        Anlageklassen</span>
+                                </div>
+                            </div>
+
+                            <p class="hinweis-text" style="font-size: 0.9rem; color: #666; margin-top: 20px;">
+                                Wählen Sie oben eine Zeitphase aus, um die zugehörigen Managementansätze –
+                                passend zum VEM-Profil – im Robusten Portfolio farblich hervorzuheben.
+                            </p>
+                        </div>
+
+                        <!-- Right: Financial Overview -->
+                        <div class="finance-overview-card phase-detail-card">
+                            <h2>Anlageplanung</h2>
+
+                            <div class="finance-input-group">
+                                <label for="total-investment-input">Anzulegendes Gesamtvermögen:</label>
+                                <div class="currency-input-wrapper">
+                                    <input type="text" id="total-investment-input" placeholder="0,00"
+                                        inputmode="decimal">
+                                    <span class="currency-symbol">€</span>
+                                </div>
+                            </div>
+
+                            <!-- Sparrate -->
+                            <div class="finance-input-group" style="margin-top: 15px;">
+                                <label for="total-investment-sparrate">Anzulegende Sparrate monatlich:</label>
+                                <div class="currency-input-wrapper">
+                                    <input type="text" id="total-investment-sparrate" placeholder="0,00"
+                                        inputmode="decimal">
+                                    <span class="currency-symbol">€</span>
+                                </div>
+                            </div>
+
+                            <div class="finance-summary">
+                                <div class="finance-row">
+                                    <span>Einmal Verplant:</span>
+                                    <span id="total-distributed-display" class="finance-value">0,00 €</span>
+                                </div>
+                                <div class="finance-row highlight-remaining">
+                                    <span>Einmal Verbleibend:</span>
+                                    <span id="total-remaining-display" class="finance-value">0,00 €</span>
+                                </div>
+
+                                <div class="finance-row"
+                                    style="margin-top: 10px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 10px;">
+                                    <span>Sparrate Verplant:</span>
+                                    <span id="sparrate-distributed-display" class="finance-value">0,00 €</span>
+                                </div>
+                                <div class="finance-row highlight-remaining">
+                                    <span>Sparrate Verbleibend:</span>
+                                    <span id="sparrate-remaining-display" class="finance-value">0,00 €</span>
+                                </div>
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="print-overall-container"
+                                style="margin-top: 20px; display:flex; gap:10px; align-items:center; justify-content:flex-end; border-top: 1px solid #eee; padding-top: 15px; flex-wrap:wrap;">
+                                <button id="crawler-btn" class="btn btn-crawler" title="Ländergewichtungen von Fondsgesellschaften abrufen">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                    Länder aktualisieren
+                                </button>
+                                <button id="print-overall-btn" class="btn btn-primary" title="Gesamtübersicht drucken">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                    Drucken
+                                </button>
+                            </div>
+                        </div>
+                    </div><!-- end .phase-interaction-area -->
+
+                    <!-- ── V4.4 Info-Bar: Schicht + Länderverteilung ── -->
+                    <div class="portfolio-info-bar" id="portfolio-info-bar" style="display:none;">
+                        <!-- Linke Spalte: Verteilung nach Schicht -->
+                        <div class="info-bar-card">
+                            <h3 class="info-bar-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18"/></svg>
+                                Verteilung nach Schicht
+                            </h3>
+                            <ul id="layer-breakdown-list">
+                                <li class="empty-breakdown">Noch keine Beträge zugewiesen</li>
+                            </ul>
+                        </div>
+
+                        <!-- Rechte Spalte: Länderverteilung -->
+                        <div class="info-bar-card" id="portfolio-country-summary" style="display:none;">
+                            <h3 class="info-bar-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                Länderverteilung nach Region
+                            </h3>
+                            <div id="portfolio-cluster-list" class="cluster-list"></div>
+                        </div>
+                    </div><!-- end .portfolio-info-bar -->
+
+                </section>
+
+                <section class="strategy-banner info-banner">
+                    <div class="banner-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                    </div>
+                    <div class="banner-content">
+                        <strong>V4.4 · Neu:</strong> Laden Sie Ihr bestehendes Depot als <strong>CSV, Excel (.xlsx) oder PDF</strong> hoch – Fonds und Beträge werden automatisch zugeordnet. Jeder Import kann in der <strong>Depot-Bibliothek</strong> gespeichert und jederzeit wieder geladen werden.
+                    </div>
+                </section>
+
+                <footer class="action-footer"></footer>
+            </div>
+        </main>
+
+        <!-- RIGHT: Mein Portfolio Panel -->
+        <aside class="portfolio-panel" id="portfolio-panel">
+            <div class="panel-header">
+                <div class="panel-header-top">
+                    <h2 class="panel-title">
+                        Mein Portfolio
+                    </h2>
+                    <div class="panel-actions">
+                        <label class="btn-icon" id="import-setup-btn" title="Setup laden (.json)">
+                            <input type="file" id="import-setup-file" accept=".json" style="display:none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                        </label>
+                        <button class="btn-icon" id="export-setup-btn" title="Setup speichern (.json)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        </button>
+                        <button class="btn-icon" id="reset-portfolio-btn" title="Portfolio zurücksetzen">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="1 4 1 10 7 10"></polyline>
+                                <path d="M3.51 15a9 9 0 1 0 .49-3.72"></path>
+                            </svg>
+                        </button>
+                        <button class="btn-icon" id="save-portfolio-btn" title="Gewählte Liste als PDF herunterladen">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                                <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                                <polyline points="7 3 7 8 15 8"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Allocation summary bar -->
+                <div class="allocation-summary">
+                    <div class="alloc-bar-track">
+                        <div class="alloc-bar-fill" id="alloc-bar-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="alloc-label">Gesamtgewichtung: <span id="alloc-total">0</span>%</div>
+                </div>
+            </div>
+
+            <div class="panel-body" id="panel-body">
+                <!-- Empty state -->
+                <div class="panel-empty" id="panel-empty">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <p>Noch keine Fonds ausgewählt.</p>
+                    <p class="panel-empty-hint">Klicken Sie auf eine Turm-Schicht und wählen Sie Fonds mit <strong>+
+                            Auswählen</strong> aus – oder laden Sie ein bestehendes Portfolio per PDF-Import hoch.</p>
+                </div>
+                <!-- Layer groups will be inserted here by JS -->
+                <div id="panel-layers"></div>
+            </div>
+        </aside>
+
+    </div><!-- end .app-layout -->
+
+    <!-- Modal for showing funds -->
+    <div class="modal-overlay" id="funds-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="header-left">
+                    <h3 id="modal-title">Fonds</h3>
+                    <select id="modal-filter" class="modal-filter" style="display:none;"></select>
+                </div>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <ul class="funds-list" id="modal-funds-list">
+                    <!-- Javascript will populate funds here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Crawler Modal -->
+    <div id="crawler-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content" style="max-width:520px;">
+            <div class="modal-header">
+                <div class="header-left">
+                    <h3>🌍 Ländergewichtungen aktualisieren</h3>
+                </div>
+                <button class="close-modal" id="crawler-modal-close">&times;</button>
+            </div>
+            <div class="modal-body" style="padding:20px;">
+                <div id="crawler-no-server" style="display:none;">
+                    <p style="margin-bottom:12px;">Der Crawler-Server läuft noch nicht. Bitte öffnen Sie ein Terminal und starten Sie:</p>
+                    <div style="background:#1e1e2e;border-radius:8px;padding:12px;font-family:monospace;font-size:0.9em;color:#cdd6f4;position:relative;">
+                        <span id="crawler-cmd">python3 crawler_server.py</span>
+                        <button id="copy-cmd-btn" style="position:absolute;right:10px;top:10px;background:rgba(255,255,255,0.1);border:none;color:#cdd6f4;border-radius:4px;padding:3px 9px;cursor:pointer;font-size:0.85em;">📋 Kopieren</button>
+                    </div>
+                    <p style="margin-top:12px;color:#888;font-size:0.88em;">Nach dem Start des Servers: Button erneut klicken.</p>
+                </div>
+                <div id="crawler-ready" style="display:none;">
+                    <p>✅ Crawler-Server erreichbar. Klicken Sie <strong>Starten</strong>, um alle Fondsgesellschafts-Seiten abzurufen.</p>
+                    <button id="crawler-start-btn" class="btn btn-crawler" style="margin-top:16px;width:100%;">🚀 Crawler starten</button>
+                </div>
+                <div id="crawler-running" style="display:none;">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                        <div class="crawler-spinner"></div>
+                        <span id="crawler-progress-label">Initialisiere...</span>
+                    </div>
+                    <div style="background:#f0f0f0;border-radius:6px;height:8px;overflow:hidden;">
+                        <div id="crawler-progress-bar" style="height:100%;background:linear-gradient(90deg,#0a7a4d,#1bb57a);width:0%;transition:width 0.5s;"></div>
+                    </div>
+                    <div id="crawler-log" style="margin-top:14px;max-height:220px;overflow-y:auto;font-family:monospace;font-size:0.8em;background:#1e1e2e;color:#cdd6f4;border-radius:6px;padding:10px;"></div>
+                </div>
+                <div id="crawler-done" style="display:none;">
+                    <p id="crawler-done-msg" style="margin-bottom:12px;"></p>
+                    <button onclick="location.reload()" class="btn btn-primary" style="margin-top:14px;">🔄 Seite neu laden</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── PDF Import Result Modal (V4.4) ── -->
+    <div id="pdf-import-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content" style="max-width:640px;">
+            <div class="modal-header">
+                <div class="header-left">
+                    <h3 id="pdf-import-modal-title">📄 PDF-Import abgeschlossen</h3>
+                </div>
+                <button class="close-modal" id="pdf-import-modal-close">&times;</button>
+            </div>
+            <div class="modal-body" style="padding:20px;">
+                <div id="pdf-import-summary"></div>
+                <!-- Unmatched Funds Section -->
+                <div id="pdf-unmatched-section" style="display:none; margin-top:20px;">
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+                        <h4 style="color:#b45309; margin:0; display:flex; align-items:center; gap:8px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            Nicht zugeordnete Fonds
+                        </h4>
+                        <span class="pdf-unmatched-badge" id="pdf-unmatched-count">0</span>
+                    </div>
+                    <p style="font-size:0.87rem; color:#666; margin-bottom:12px;">
+                        Diese Fonds aus Ihrem Portfolio wurden in der aktuellen Fondsdatenbank nicht gefunden (möglicherweise delistet oder umbenannt):
+                    </p>
+                    <div id="pdf-unmatched-list" class="pdf-unmatched-list"></div>
+                </div>
+                <!-- Name & Aktions-Zeile -->
+                <div style="margin-top:20px;padding-top:16px;border-top:1px solid #eee;">
+                    <label style="font-size:0.85rem;color:#555;display:block;margin-bottom:6px;">Name für Bibliothek:</label>
+                    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                        <input id="import-save-name" type="text" style="flex:1;min-width:160px;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:0.92rem;" placeholder="z. B. AW 400TEUR">
+                        <button id="import-save-btn" class="btn btn-primary" style="white-space:nowrap;">💾 In Bibliothek speichern</button>
+                    </div>
+                    <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+                        <button id="import-load-btn" class="btn" style="background:#0a7a4d;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:0.9rem;">▶ Jetzt ins Portfolio laden</button>
+                        <button id="import-json-dl-btn" class="btn" style="background:#f1f5f9;color:#333;border:1px solid #ddd;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:0.9rem;">⬇ Als JSON herunterladen</button>
+                        <button id="pdf-import-modal-ok" class="btn" style="background:#f1f5f9;color:#333;border:1px solid #ddd;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:0.9rem;">Schließen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── PDF Processing Spinner Modal (V4.4) ── -->
+    <div id="pdf-processing-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content" style="max-width:380px; text-align:center; padding:40px 30px;">
+            <div class="pdf-spinner"></div>
+            <p style="margin-top:20px; font-size:1rem; color:#444; font-weight:500;">PDF wird verarbeitet…</p>
+            <p style="font-size:0.85rem; color:#888; margin-top:6px;">Bitte warten Sie einen Moment.</p>
+        </div>
+    </div>
+
+    <!-- ── Hilfe-Modal / Benutzerhandbuch ── -->
+    <div id="help-modal" class="modal-overlay help-modal-overlay" role="dialog" aria-modal="true" aria-label="Benutzerhandbuch">
+        <div class="help-modal-content">
+            <div class="help-modal-header">
+                <h2 style="margin:0;color:#fff;font-size:1.15rem;display:flex;align-items:center;gap:8px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    Benutzerhandbuch – Robustes Portfolio V4.4
+                </h2>
+                <button id="help-modal-close" class="close-modal" aria-label="Schließen">&times;</button>
+            </div>
+            <div class="help-modal-body">
+
+                <!-- ══ SEKTION 1: Bestehendes Portfolio importieren ══ -->
+                <div class="help-section">
+                    <h3>📂 Bestehendes Portfolio importieren – zwei Wege</h3>
+                    <p>Wenn Sie ein bestehendes Robustes Portfolio haben, können Sie es direkt in V4.4 laden. Es gibt zwei Wege – <strong>beide sind unabhängig voneinander</strong>:</p>
+
+                    <div style="background:#f0f9ff;border-left:4px solid #0a7a4d;border-radius:6px;padding:14px 16px;margin:14px 0;">
+                        <strong style="color:#0a7a4d;display:block;margin-bottom:8px;">✅ Weg 1 (empfohlen): Setup laden (.json)</strong>
+                        <p style="margin:0 0 8px;">Der schnellste und zuverlässigste Weg. Die Datei <code>portfolio_import.json</code> enthält das vorbereitete Portfolio mit allen Fonds und Beträgen.</p>
+                        <ol style="margin:0;padding-left:18px;">
+                            <li>Im Panel <strong>„Mein Portfolio"</strong> (rechts) auf das ⬆ Symbol (Pfeil nach oben) klicken</li>
+                            <li>Die Datei <code>portfolio_import.json</code> aus dem V4.4-Ordner auswählen</li>
+                            <li>Das Portfolio wird sofort mit allen Fonds und Beträgen geladen</li>
+                        </ol>
+                        <p style="margin:8px 0 0;font-size:0.88rem;color:#555;">⚠ Kein separater Upload der PDF-Datei nötig! Die JSON-Datei enthält bereits alle Informationen.</p>
+                    </div>
+
+                    <div style="background:#fffbea;border-left:4px solid #d97706;border-radius:6px;padding:14px 16px;margin:14px 0;">
+                        <strong style="color:#d97706;display:block;margin-bottom:8px;">⚡ Weg 2 (automatisch, wenn PDF maschinenlesbar): Portfolio laden (PDF)</strong>
+                        <p style="margin:0 0 8px;">Über den Button <strong>„Portfolio laden (PDF)"</strong> im Header können Sie direkt eine Depotauszug-PDF hochladen. Das System versucht, WKN-Nummern und Kurswerte automatisch auszulesen.</p>
+                        <ol style="margin:0;padding-left:18px;">
+                            <li><strong>„Portfolio laden (PDF)"</strong> Button im Header anklicken</li>
+                            <li>Die Depot-PDF auswählen (muss maschinenlesbaren Text enthalten)</li>
+                            <li>Fonds werden automatisch dem Turm zugeordnet und Beträge eingetragen</li>
+                        </ol>
+                        <p style="margin:8px 0 0;font-size:0.88rem;color:#d97706;">⚠ Scan-PDFs (Fotos/Scans ohne Textebene) können nicht direkt gelesen werden – bitte Weg 1 verwenden.</p>
+                    </div>
+                </div>
+
+                <!-- ══ SEKTION 2: Kompatibilität ══ -->
+                <div class="help-section">
+                    <h3>🖥️ Betriebssystem-Kompatibilität</h3>
+                    <p>Das Dashboard ist eine reine Webanwendung und läuft in jedem modernen Browser. Es ist <strong>kein Betriebssystem und keine Installation erforderlich</strong>:</p>
+                    <table class="help-table">
+                        <thead><tr><th>System</th><th>Unterstützt?</th><th>Hinweis</th></tr></thead>
+                        <tbody>
+                            <tr><td>🍎 <strong>macOS</strong></td><td>✅ Vollständig</td><td>Chrome, Safari, Firefox</td></tr>
+                            <tr><td>🪟 <strong>Windows</strong></td><td>✅ Vollständig</td><td>Chrome, Edge, Firefox</td></tr>
+                            <tr><td>🐧 <strong>Linux</strong></td><td>✅ Vollständig</td><td>Chrome, Firefox</td></tr>
+                            <tr><td>📱 <strong>Tablet / iPad</strong></td><td>⚠ Eingeschränkt</td><td>Layout für Desktop optimiert</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="help-tip">💡 Alle Daten werden lokal im Browser gespeichert (LocalStorage). Es werden keine Daten ins Internet übertragen.</p>
+                </div>
+
+                <!-- ══ SEKTION 3: Erste Schritte (neu anlegen) ══ -->
+                <div class="help-section">
+                    <h3>🆕 Portfolio neu anlegen (ohne Importdatei)</h3>
+                    <ol>
+                        <li><strong>Gesamtvermögen eingeben</strong> – Im Bereich „Anlageplanung" den Betrag eingeben.</li>
+                        <li><strong>Schicht auswählen</strong> – Auf eine farbige Schicht im Turm klicken, um die Fondsliste zu öffnen.</li>
+                        <li><strong>Betrag und Fonds wählen</strong> – Einmalbetrag / Sparrate eintragen, dann <strong>+ Auswählen</strong> klicken.</li>
+                        <li><strong>Portfolio verwalten</strong> – Im Panel rechts alle gewählten Fonds sehen; mit <strong>✕</strong> entfernen.</li>
+                        <li><strong>Speichern</strong> – Mit dem ⬇ Pfeil-Symbol als JSON sichern, um das Setup jederzeit wieder laden zu können.</li>
+                    </ol>
+                </div>
+
+                <!-- ══ SEKTION 4: Schichten ══ -->
+                <div class="help-section">
+                    <h3>📋 Schichten-Reihenfolge im Turm (unten → oben)</h3>
+                    <ol>
+                        <li>Tagesgeld</li>
+                        <li>Kapitalreservefonds (Kasse / Wertsicherung)</li>
+                        <li>Defensive Vermögensverwalter</li>
+                        <li>Ausgewogene Vermögensverwalter</li>
+                        <li>Dynamische Vermögensverwalter</li>
+                        <li>Märkte (Enges Benchmarking auf Aktien)</li>
+                        <li>Spezialitäten / Themen</li>
+                    </ol>
+                    <p class="help-tip">🏷️ Jede Schicht hat eine Sammelposition <strong>„[Schicht] – Fonds delistet"</strong> für Altpositionen, die inzwischen von der VEM-Liste entfernt wurden, aber noch im Depot liegen.</p>
+                </div>
+
+                <!-- ══ SEKTION 5: Panel-Buttons ══ -->
+                <div class="help-section">
+                    <h3>🗄️ Portfolio speichern &amp; wiederherstellen</h3>
+                    <table class="help-table">
+                        <thead><tr><th>Symbol (oben in „Mein Portfolio")</th><th>Funktion</th><th>Datei</th></tr></thead>
+                        <tbody>
+                            <tr><td>⬆ <strong>Pfeil oben</strong></td><td>Gespeicherte JSON-Datei laden (Setup wiederherstellen)</td><td><code>.json</code></td></tr>
+                            <tr><td>⬇ <strong>Pfeil unten</strong></td><td>Portfolio als JSON-Datei speichern (Backup erstellen)</td><td><code>.json</code></td></tr>
+                            <tr><td>↺ <strong>Reset</strong></td><td>Gesamtes Portfolio zurücksetzen (alle Fonds entfernen)</td><td>–</td></tr>
+                            <tr><td>💾 <strong>Diskette</strong></td><td>Fondsliste als PDF exportieren / drucken</td><td><code>.pdf</code></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ══ SEKTION 6: Zeitphasen ══ -->
+                <div class="help-section">
+                    <h3>⏱️ Zeitphasen und Suche</h3>
+                    <ul style="padding-left:18px;margin:0;">
+                        <li><strong>Zeitphasen-Buttons</strong> – Markieren die zugehörigen Managementansätze im Turm farbig</li>
+                        <li><strong>Suchfeld</strong> – Nach Fonds oder WKN suchen, Ergebnis direkt auswählen</li>
+                        <li><strong>Zeitphasen-Filterung</strong> – Im Fondsdialog jeder Schicht per Dropdown nach Managementansatz filtern</li>
+                    </ul>
+                </div>
+
+                <div class="help-footer">
+                    Version 4.4 &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; Läuft vollständig lokal im Browser – keine Serververbindung erforderlich
+                </div>
+
+            </div><!-- end .help-modal-body -->
+        </div>
+    </div><!-- end #help-modal -->
+
+    <!-- ── Depot-Bibliothek Modal ── -->
+    <div id="library-modal" class="modal-overlay" style="display:none;" role="dialog" aria-modal="true">
+        <div class="modal-content" style="max-width:680px;max-height:85vh;display:flex;flex-direction:column;">
+            <div class="modal-header">
+                <div class="header-left">
+                    <h3 style="display:flex;align-items:center;gap:8px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                        Depot-Bibliothek
+                    </h3>
+                </div>
+                <button class="close-modal" id="library-modal-close">&times;</button>
+            </div>
+            <div style="padding:16px 20px 8px;display:flex;gap:10px;align-items:center;border-bottom:1px solid #f0f0f0;flex-wrap:wrap;">
+                <label class="btn btn-primary" style="cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 14px;font-size:0.9rem;">
+                    <input type="file" id="library-import-file" accept=".json" style="display:none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    JSON-Datei importieren
+                </label>
+                <p style="margin:0;font-size:0.85rem;color:#888;">Gespeicherte Portfolios per Klick laden oder als JSON herunterladen</p>
+            </div>
+            <div class="modal-body" style="padding:16px 20px;overflow-y:auto;flex:1;">
+                <div id="library-empty" style="text-align:center;padding:40px 20px;color:#aaa;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <p style="margin:0;">Noch keine Portfolios gespeichert.<br>Importieren Sie eine CSV- oder Excel-Datei und speichern Sie sie in der Bibliothek.</p>
+                </div>
+                <div id="library-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="fund_data.js?v=20260415b"></script>
+    <script src="app_v4.4b.js"></script>
+
+</body>
+
+</html>

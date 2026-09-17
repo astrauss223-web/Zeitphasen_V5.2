@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robustes Portfolio V5.2 – Zeitphasenmodell</title>
+    <meta name="description" content="Robustes Portfolio V5.2 – Schichten direkt unter den Zeitphasen">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles_v5.2.css">
+
+    <!-- PDF Generation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+    <!-- PDF.js for reading uploaded PDFs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <!-- SheetJS for Excel/XLSX import -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+</head>
+
+<body>
+    <header class="mlp-header">
+        <div class="header-container">
+            <div class="header-title-row">
+                <div>
+                    <h1 id="app-main-title">Zeitphasenmodell</h1>
+                    <p class="subtitle">V5.2 · Zeitphasenorientierte Allokation &amp; Managementansätze</p>
+                </div>
+                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                    <!-- Depot Upload Button (Shape matched to Hard Reset) -->
+                    <button id="depot-upload-btn" type="button"
+                        title="Depot-CSV oder Excel importieren (auch PDF möglich)"
+                        onclick="document.getElementById('depot-upload-input').click()"
+                        style="background:linear-gradient(135deg,#059669,#10b981);
+                               color:#fff; border:none; border-radius:8px;
+                               padding:8px 14px; font-size:0.88rem; font-weight:600;
+                               cursor:pointer; display:flex; align-items:center; gap:6px;
+                               box-shadow:0 2px 8px rgba(16,185,129,0.4);
+                               transition:opacity 0.2s;"
+                        onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+                        <span id="depot-upload-label-text">Depot laden (CSV / Excel)</span>
+                    </button>
+                    <input type="file" id="depot-upload-input" accept=".csv,.xlsx,.xls,.pdf,.json" style="display:none;" onchange="if(window.handleFileSelection) window.handleFileSelection(this.files[0]); this.value='';">
+
+                    <!-- Depot-Bibliothek Button (Shape matched to Hard Reset) -->
+                    <button id="library-open-btn"
+                        title="Depot-Bibliothek öffnen"
+                        style="background:linear-gradient(135deg,#1e3a5f,#2563eb);
+                               color:#fff; border:none; border-radius:8px;
+                               padding:8px 14px; font-size:0.88rem; font-weight:600;
+                               cursor:pointer; display:flex; align-items:center; gap:6px;
+                               box-shadow:0 2px 8px rgba(37,99,235,0.4);
+                               transition:opacity 0.2s;"
+                        onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        Bibliothek
+                    </button>
+
+                    <!-- Hilfe Button (Shape matched to Hard Reset) -->
+                    <button id="help-btn"
+                        title="Benutzerhandbuch öffnen" aria-label="Hilfe"
+                        style="background:linear-gradient(135deg,#475569,#64748b);
+                               color:#fff; border:none; border-radius:8px;
+                               padding:8px 14px; font-size:0.88rem; font-weight:600;
+                               cursor:pointer; display:flex; align-items:center; gap:6px;
+                               box-shadow:0 2px 8px rgba(100,116,139,0.4);
+                               transition:opacity 0.2s;"
+                        onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        Hilfe
+                    </button>
+
+                    <!-- Hard Reset Button -->
+                    <button id="hard-reset-btn"
+                        title="Alle gespeicherten Daten löschen und Seite neu starten"
+                        style="background:linear-gradient(135deg,#7f1d1d,#dc2626);
+                               color:#fff; border:none; border-radius:8px;
+                               padding:8px 14px; font-size:0.88rem; font-weight:600;
+                               cursor:pointer; display:flex; align-items:center; gap:6px;
+                               box-shadow:0 2px 8px rgba(220,38,38,0.4);
+                               transition:opacity 0.2s;"
+                        onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2.5"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="1 4 1 10 7 10"></polyline>
+                            <path d="M3.51 15a9 9 0 1 0 .49-3.72"></path>
+                        </svg>
+                        Hard Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Two-column app layout: Dashboard + Portfolio Panel -->
+    <div class="app-layout">
+
+        <!-- LEFT: Main Dashboard -->
+        <main class="dashboard-column">
+            <div class="content-container">
+
+                <section class="intro-section">
+                    <p class="intro-text">
+                        Abhängig von Ihrem Anlagehorizont, erfordert Ihr Vermögensaufbau eine strukturierte Zuordnung von Kapital in Zeitphasen, unterschiedliche Anlageklassen und Strategien - sogenannte Managementansätze.
+                    </p>
+                </section>
+
+                <!-- SECTION 1: ZEITPHASEN MATRIX (SCHICHTEN DIREKT UNTER DEN ZEITPHASEN) -->
+                <section class="portfolio-matrix v5-zeitphasen-section">
+                    <div class="matrix-header">
+                        <h2 style="color:var(--color-mlp-blau, #033d5d); font-size:26px; font-weight:700; margin-bottom:4px;">Denken in Zeitphasen und Managementansätzen</h2>
+                        <p style="color:var(--color-mlp-blau, #033d5d); font-size:16px; font-weight:700; margin-top:2px; margin-bottom:16px;">Sie planen Ihre Ziele - wir die passende Strategie dazu.</p>
+
+                        <!-- PROMINENT ELEGANT SEARCH BAR -->
+                        <div class="fund-search-container">
+                            <div class="search-input-wrapper">
+                                <svg class="search-icon-inside" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                                <input type="text" id="fund-search-input" placeholder="Nach Fonds, ISIN oder WKN suchen..." autocomplete="off">
+                            </div>
+                            <ul id="fund-search-results" class="search-results-popup"></ul>
+                        </div>
+                    </div>
+
+                    <!-- 6-Columns Grid: Header on Top, 3D Cylinder Directly Below -->
+                    <div class="v5-grid-container" id="v5-grid-container">
+                        <!-- Injected via JS: Columns 1..6 with Phase Header + 3D Cylinder Layer -->
+                    </div>
+
+                    <!-- INTERACTION AREA: Standalone Cylinders (Left) + Finance Overview (Right) -->
+                    <div class="phase-interaction-area">
+                        
+                        <!-- Left: Standalone Cylinders side-by-side (Tagesgeld & Echte / unechte Anlageklassen mit unternehmerischen Risiken) -->
+                        <div class="v5-standalone-inline-wrapper">
+                            <div id="block-tagesgeld-container" class="standalone-cylinder-box"></div>
+                            <div id="block-spezial-container" class="standalone-cylinder-box"></div>
+                        </div>
+
+                        <!-- Right: Financial Overview -->
+                        <div class="finance-overview-card phase-detail-card" style="margin: 0; border-left: 4px solid var(--color-mlp-blau); background:#ffffff; border-radius:10px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+                            <h2 style="font-size:20px; margin-bottom:16px; color:var(--color-mlp-blau); font-weight:700;">Anlageplanung</h2>
+
+                            <div class="finance-input-group" style="margin-bottom:14px;">
+                                <label for="total-investment-input" style="font-size:14px; font-weight:600; color:#334155; display:block; margin-bottom:6px;">Anzulegendes Gesamtvermögen:</label>
+                                <div class="currency-input-wrapper">
+                                    <input type="text" id="total-investment-input" placeholder="0,00" inputmode="decimal">
+                                    <span class="currency-symbol">€</span>
+                                </div>
+                            </div>
+
+                            <div class="finance-input-group" style="margin-bottom:18px;">
+                                <label for="total-investment-sparrate" style="font-size:14px; font-weight:600; color:#334155; display:block; margin-bottom:6px;">Anzulegende Sparrate monatlich:</label>
+                                <div class="currency-input-wrapper">
+                                    <input type="text" id="total-investment-sparrate" placeholder="0,00" inputmode="decimal">
+                                    <span class="currency-symbol">€</span>
+                                </div>
+                            </div>
+
+                            <div class="finance-summary" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:16px; display:flex; flex-direction:column; gap:10px;">
+                                <div class="finance-row" style="display:flex; justify-content:space-between; align-items:center; font-size:14px;">
+                                    <span style="color:#475569; font-weight:500;">Einmal Verplant:</span>
+                                    <span id="total-distributed-display" class="finance-value" style="font-weight:700; color:#0f172a;">0,00 €</span>
+                                </div>
+                                <div class="finance-row highlight-remaining" style="display:flex; justify-content:space-between; align-items:center; font-size:14px; border-top:1px solid #e2e8f0; padding-top:8px;">
+                                    <span style="color:#033D5D; font-weight:700;">Einmal Verbleibend:</span>
+                                    <span id="total-remaining-display" class="finance-value" style="font-weight:700; color:#10b981;">0,00 €</span>
+                                </div>
+
+                                <div class="finance-row" style="display:flex; justify-content:space-between; align-items:center; font-size:14px; border-top:1px dashed #cbd5e1; padding-top:10px;">
+                                    <span style="color:#475569; font-weight:500;">Sparrate Verplant:</span>
+                                    <span id="sparrate-distributed-display" class="finance-value" style="font-weight:700; color:#0f172a;">0,00 €</span>
+                                </div>
+                                <div class="finance-row highlight-remaining" style="display:flex; justify-content:space-between; align-items:center; font-size:14px; border-top:1px solid #e2e8f0; padding-top:8px;">
+                                    <span style="color:#033D5D; font-weight:700;">Sparrate Verbleibend:</span>
+                                    <span id="sparrate-remaining-display" class="finance-value" style="font-weight:700; color:#10b981;">0,00 €</span>
+                                </div>
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="print-overall-container" style="margin-top: 20px; display:flex; gap:10px; align-items:center; justify-content:flex-end; border-top: 1px solid #eee; padding-top: 15px; flex-wrap:wrap;">
+                                <button id="crawler-btn" class="btn btn-crawler" title="Ländergewichtungen von Fondsgesellschaften abrufen">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:5px;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                    Länder aktualisieren
+                                </button>
+                                <button id="print-overall-btn" class="btn btn-primary" title="Gesamtübersicht drucken">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                    Drucken
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── LÄNDERGEWICHTUNGEN & SCHICHTVERTEILUNG ── -->
+                    <div class="portfolio-info-bar" id="portfolio-info-bar">
+                        <!-- Spalte 1: Verteilung nach Schicht -->
+                        <div class="info-bar-card">
+                            <h3 class="info-bar-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18"/></svg>
+                                Verteilung nach Schicht
+                            </h3>
+                            <ul id="layer-breakdown-list" style="list-style:none; padding:0;">
+                                <li class="empty-breakdown" style="color:#888; font-size:0.85rem; text-align:center; padding:10px 0;">Noch keine Beträge zugewiesen</li>
+                            </ul>
+                        </div>
+
+                        <!-- Spalte 2: Länderverteilung Einmalbeitrag -->
+                        <div class="info-bar-card" id="portfolio-country-summary">
+                            <h3 class="info-bar-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                Länder (Einmalbeitrag)
+                            </h3>
+                            <div id="portfolio-cluster-list" class="cluster-list"></div>
+                        </div>
+
+                        <!-- Spalte 3: Länderverteilung Sparrate -->
+                        <div class="info-bar-card" id="portfolio-country-summary-sparrate">
+                            <h3 class="info-bar-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                Länder (Sparrate)
+                            </h3>
+                            <div id="portfolio-cluster-list-sparrate" class="cluster-list"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- RIGHT: Portfolio Panel -->
+        <aside class="portfolio-panel" id="portfolio-panel">
+            <div class="panel-card">
+                <!-- Zeile 1: Icons linksbündig (Sichtbarkeit ein-/ausblenden) und rechtsbündig (Setup-Aktionen) -->
+                <div class="panel-header-actions-row" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                    <div class="panel-actions-left" style="display:flex; gap:6px; align-items:center;">
+                        <button class="btn-icon" id="toggle-managers-visibility-btn" title="Auswahl operativer Manager ausblenden" aria-label="Auswahl operativer Manager ausblenden">
+                            <svg id="visibility-icon-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="panel-actions" style="display:flex; gap:6px; align-items:center;">
+                        <label class="btn-icon" id="import-setup-btn" title="Setup laden (.json)" style="cursor:pointer; padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; background:#ffffff; color:#334155; display:flex; align-items:center; justify-content:center; transition:all 0.15s;">
+                            <input type="file" id="import-setup-file" accept=".json,.csv,.xlsx,.xls,.pdf" style="display:none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                        </label>
+                        <button class="btn-icon" id="export-setup-btn" title="Setup speichern (.json)" style="cursor:pointer; padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; background:#ffffff; color:#334155; display:flex; align-items:center; justify-content:center; transition:all 0.15s;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        </button>
+                        <button class="btn-icon" id="reset-portfolio-btn" title="Portfolio zurücksetzen" style="cursor:pointer; padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; background:#ffffff; color:#334155; display:flex; align-items:center; justify-content:center; transition:all 0.15s;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="1 4 1 10 7 10"></polyline>
+                                <path d="M3.51 15a9 9 0 1 0 .49-3.72"></path>
+                            </svg>
+                        </button>
+                        <button class="btn-icon" id="save-portfolio-btn" title="Gewählte Liste als PDF herunterladen" style="cursor:pointer; padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; background:#ffffff; color:#334155; display:flex; align-items:center; justify-content:center; transition:all 0.15s;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                                <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                                <polyline points="7 3 7 8 15 8"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Zeile 2: Überschrift in 2. Zeile direkt über Gesamtgewichtung -->
+                <h3 style="margin:0 0 10px 0; font-size:16px; font-weight:700; color:var(--color-mlp-blau, #033d5d); white-space:nowrap;">Auswahl operativer Manager</h3>
+
+                <!-- Allocation summary bar (V4.4) -->
+                <div class="allocation-summary" style="margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid #f1f5f9;">
+                    <div class="alloc-bar-track" style="background:#e2e8f0; height:6px; border-radius:3px; overflow:hidden;">
+                        <div class="alloc-bar-fill" id="alloc-bar-fill" style="width:0%; height:100%; background:#ef4444; transition:width 0.3s, background-color 0.3s;"></div>
+                    </div>
+                    <div class="alloc-label" style="font-size:12px; font-weight:600; color:#475569; margin-top:4px;">Gesamtgewichtung: <span id="alloc-total">0</span>%</div>
+                </div>
+
+                <div id="panel-empty" class="panel-empty-state">
+                    Noch keine Fonds ausgewählt. Klicken Sie auf eine Schicht im Portfolio, um Fonds hinzuzufügen oder laden Sie ein bestehendes Depot hoch.
+                </div>
+                <div id="panel-hidden-state" style="display:none; padding:18px 12px; text-align:center; color:#64748b; font-size:12px; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:8px; margin-bottom:10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block; margin:0 auto 6px auto;">
+                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                    </svg>
+                    <strong style="display:block; color:#334155; font-size:13px; margin-bottom:3px;">Auswahl ausgeblendet</strong>
+                    Die Fonds bleiben im Portfolio aktiv. Klick auf das Auge blendet die Liste wieder ein.
+                </div>
+                <div id="panel-layers"></div>
+
+                <div class="panel-footer" style="margin-top:20px; border-top:1px solid #eee; padding-top:15px; display:flex; flex-direction:column; gap:10px;">
+                    <button id="save-portfolio-pdf-btn" class="btn btn-primary" style="width:100%;">Anlagevorschlag PDF</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Funds Selection Modal -->
+    <div id="funds-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 id="modal-title">Fonds auswählen</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-filter-row">
+                    <select id="modal-filter">
+                        <option value="all">Alle Arten anzeigen</option>
+                    </select>
+                </div>
+                <div id="modal-funds-list" class="modal-funds-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HELP MODAL -->
+    <div id="help-modal" class="modal-overlay">
+        <div class="modal-container" style="max-width: 600px;">
+            <div class="modal-header">
+                <h3>Benutzerhandbuch V5.2</h3>
+                <button id="help-modal-close" class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" style="padding: 20px; line-height: 1.6; color: #334155;">
+                <h4>Robustes Portfolio V5.2</h4>
+                <p>Zuordnung der Zeitphasen zu den Managementansätzen:</p>
+                <ul>
+                    <li><strong>Zeitphase 1:</strong> Kapitalreserve</li>
+                    <li><strong>Zeitphase 2:</strong> Defensive Vermögensverwalter</li>
+                    <li><strong>Zeitphase 3:</strong> Ausgewogene Vermögensverwalter</li>
+                    <li><strong>Zeitphase 4:</strong> Dynamische Vermögensverwalter</li>
+                    <li><strong>Zeitphase 5:</strong> Märkte Weites Benchmarking auf Aktien</li>
+                    <li><strong>Zeitphase 6:</strong> Märkte Enges Benchmarking auf Aktien</li>
+                    <li><strong>Losgelöst:</strong> Tagesgeld &amp; Echte / unechte Anlageklassen mit unternehmerischen Risiken</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="fund_data.js"></script>
+    <script src="app_v5.2.js"></script>
+
+    <!-- ── PDF Import Result Modal (V4.4) ── -->
+    <div id="pdf-import-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content" style="max-width:640px; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.3);">
+            <div class="modal-header">
+                <div class="header-left">
+                    <h3 id="pdf-import-modal-title">📊 Depot-Import erfolgreich</h3>
+                </div>
+                <button class="close-modal" id="pdf-import-modal-close">&times;</button>
+            </div>
+            <div class="modal-body" style="padding:20px;">
+                <div id="pdf-import-summary"></div>
+                <!-- Unmatched Funds Section -->
+                <div id="pdf-unmatched-section" style="display:none; margin-top:20px;">
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+                        <h4 style="color:#b45309; margin:0; display:flex; align-items:center; gap:8px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12"/><line x1="12" y1="16" x2="12.01" y2="17"/></svg>
+                            Nicht zugeordnete Fonds
+                        </h4>
+                        <span class="pdf-unmatched-badge" id="pdf-unmatched-count">0</span>
+                    </div>
+                    <p style="font-size:0.87rem; color:#666; margin-bottom:12px;">
+                        Diese Fonds aus Ihrem Portfolio wurden in der aktuellen Fondsdatenbank nicht gefunden (möglicherweise delistet oder umbenannt):
+                    </p>
+                    <div id="pdf-unmatched-list" class="pdf-unmatched-list"></div>
+                </div>
+                <!-- Name & Aktions-Zeile -->
+                <div style="margin-top:20px;padding-top:16px;border-top:1px solid #eee;">
+                    <label style="font-size:0.85rem;color:#555;display:block;margin-bottom:6px;">Name für Bibliothek:</label>
+                    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                        <input id="import-save-name" type="text" style="flex:1;min-width:160px;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:0.92rem;" placeholder="z. B. AW 400TEUR">
+                        <button id="import-save-btn" class="btn btn-primary" style="white-space:nowrap;">💾 In Bibliothek speichern</button>
+                    </div>
+                    <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+                        <button id="import-load-btn" class="btn" style="background:#0a7a4d;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:0.9rem;">▶ Jetzt ins Portfolio laden</button>
+                        <button id="import-json-dl-btn" class="btn" style="background:#f1f5f9;color:#333;border:1px solid #ddd;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:0.9rem;">⬇ Als JSON herunterladen</button>
+                        <button id="pdf-import-modal-ok" class="btn" style="background:#f1f5f9;color:#333;border:1px solid #ddd;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:0.9rem;">Schließen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── PDF Processing Spinner Modal (V4.4) ── -->
+    <div id="pdf-processing-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content" style="max-width:380px; text-align:center; padding:40px 30px; background:#fff; border-radius:12px;">
+            <div class="pdf-spinner"></div>
+            <p style="margin-top:20px; font-size:1rem; color:#444; font-weight:500;">Datei wird verarbeitet…</p>
+            <p style="font-size:0.85rem; color:#888; margin-top:6px;">Bitte warten Sie einen Moment.</p>
+        </div>
+    </div>
+
+    <!-- ── Depot-Bibliothek Modal ── -->
+    <div id="library-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content" style="max-width:680px;max-height:85vh;display:flex;flex-direction:column; background:#fff; border-radius:12px; overflow:hidden;">
+            <div class="modal-header">
+                <div class="header-left">
+                    <h3 style="display:flex;align-items:center;gap:8px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                        Depot-Bibliothek
+                    </h3>
+                </div>
+                <button class="close-modal" id="library-modal-close">&times;</button>
+            </div>
+            <div style="padding:16px 20px 8px;display:flex;gap:10px;align-items:center;border-bottom:1px solid #f0f0f0;flex-wrap:wrap;">
+                <label class="btn btn-primary" style="cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 14px;font-size:0.9rem;">
+                    <input type="file" id="library-import-file" accept=".json,.csv,.xlsx,.xls,.pdf" style="display:none;" onchange="if(window.handleFileSelection) window.handleFileSelection(this.files[0]); this.value='';">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    JSON-Datei importieren
+                </label>
+                <p style="margin:0;font-size:0.85rem;color:#888;">Gespeicherte Portfolios per Klick laden oder als JSON herunterladen</p>
+            </div>
+            <div class="modal-body" style="padding:16px 20px;overflow-y:auto;flex:1;">
+                <div id="library-empty" style="text-align:center;padding:40px 20px;color:#aaa;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <p style="margin:0;">Noch keine Portfolios gespeichert.<br>Importieren Sie eine CSV- oder Excel-Datei und speichern Sie sie in der Bibliothek.</p>
+                </div>
+                <div id="library-list"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Crawler Modal -->
+    <div id="crawler-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content" style="max-width:520px;">
+            <div class="modal-header">
+                <div class="header-left">
+                    <h3>🌍 Ländergewichtungen aktualisieren</h3>
+                </div>
+                <button class="close-modal" id="crawler-modal-close">&times;</button>
+            </div>
+            <div class="modal-body" style="padding:20px;">
+                <div id="crawler-no-server" style="display:none;">
+                    <p style="margin-bottom:12px;">Der Crawler-Server läuft noch nicht. Bitte öffnen Sie ein Terminal und starten Sie:</p>
+                    <div style="background:#1e1e2e;border-radius:8px;padding:12px;font-family:monospace;font-size:0.9em;color:#cdd6f4;position:relative;">
+                        <span id="crawler-cmd">python3 crawler_server.py</span>
+                        <button id="copy-cmd-btn" style="position:absolute;right:10px;top:10px;background:rgba(255,255,255,0.1);border:none;color:#cdd6f4;border-radius:4px;padding:3px 9px;cursor:pointer;font-size:0.85em;">📋 Kopieren</button>
+                    </div>
+                    <p style="margin-top:12px;color:#888;font-size:0.88em;">Nach dem Start des Servers: Button erneut klicken.</p>
+                </div>
+                <div id="crawler-ready" style="display:none;">
+                    <p>✅ Crawler-Server erreichbar. Klicken Sie <strong>Starten</strong>, um alle Fondsgesellschafts-Seiten abzurufen.</p>
+                    <button id="crawler-start-btn" class="btn btn-crawler" style="margin-top:16px;width:100%;">🚀 Crawler starten</button>
+                </div>
+                <div id="crawler-running" style="display:none;">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+                        <div class="crawler-spinner"></div>
+                        <span id="crawler-progress-label">Initialisiere...</span>
+                    </div>
+                    <div style="background:#f0f0f0;border-radius:6px;height:8px;overflow:hidden;">
+                        <div id="crawler-progress-bar" style="height:100%;background:linear-gradient(90deg,#0a7a4d,#1bb57a);width:0%;transition:width 0.5s;"></div>
+                    </div>
+                    <div id="crawler-log" style="margin-top:14px;max-height:220px;overflow-y:auto;font-family:monospace;font-size:0.8em;background:#1e1e2e;color:#cdd6f4;border-radius:6px;padding:10px;"></div>
+                </div>
+                <div id="crawler-done" style="display:none;">
+                    <p id="crawler-done-msg" style="margin-bottom:12px;"></p>
+                    <button onclick="location.reload()" class="btn btn-primary" style="margin-top:14px;">🔄 Seite neu laden</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
