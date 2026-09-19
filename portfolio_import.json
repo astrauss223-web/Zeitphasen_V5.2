@@ -1,0 +1,326 @@
+{
+  "portfolio": [
+    {
+      "blockId": "block-kasse",
+      "blockTitle": "Kapitalreservefonds",
+      "allocation": 0,
+      "funds": [
+        {
+          "name": "ZinsPlus",
+          "info": "WKN: A0MUWS",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "Basis-Fonds I Nachhaltig",
+          "info": "WKN: 847809",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "Renten Strategie K",
+          "info": "WKN: 979952",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "iShares iBonds Dec 2028 Term E.",
+          "info": "WKN: A3D8E7",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "Carmignac Credit 2027",
+          "info": "WKN: A3DK4P",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "Carmignac Credit 2029",
+          "info": "WKN: A3EXGB",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "Carmignac Portfolio Flexible Bond",
+          "info": "WKN: A417MG",
+          "type": "",
+          "ertrag": ""
+        }
+      ]
+    },
+    {
+      "blockId": "block-defensiv",
+      "blockTitle": "Defensive Vermögensverwalter",
+      "allocation": 0,
+      "funds": [
+        {
+          "name": "ACATIS IFK Value Renten",
+          "info": "WKN: A0X758",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "Vanguard EUR Corporate Bond",
+          "info": "WKN: A143JK",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "Sauren Global Defensiv",
+          "info": "WKN: 214466",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "BKC Treuhand Portfolio",
+          "info": "WKN: A0YFQ9",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "EB - Multi Asset Conservative",
+          "info": "WKN: A1JUU9",
+          "type": "",
+          "ertrag": ""
+        }
+      ]
+    },
+    {
+      "blockId": "block-ausgewogen",
+      "blockTitle": "Ausgewogene Vermögensverwalter",
+      "allocation": 0,
+      "funds": [
+        {
+          "name": "Sauren Global Balanced",
+          "info": "WKN: 930920",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "MEAG EuroBalance",
+          "info": "WKN: 975745",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "Swisscanto Portfolio Fund Sust. Balanced",
+          "info": "WKN: A41MQN",
+          "type": "",
+          "ertrag": ""
+        }
+      ]
+    },
+    {
+      "blockId": "block-dynamisch",
+      "blockTitle": "Dynamische Vermögensverwalter",
+      "allocation": 0,
+      "funds": [
+        {
+          "name": "smarTrack dynamic B",
+          "info": "WKN: A2PSGE",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "ACATIS Value Event Fonds",
+          "info": "WKN: A2DR2M",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "GANÉ Value Event Fund M",
+          "info": "WKN: A407LK",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "FMM-Fonds",
+          "info": "WKN: 847811",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "BL Global 75",
+          "info": "WKN: 986855",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "FvS - Multiple Opportunities R",
+          "info": "WKN: A0M430",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "FERI Core Strategy Dynamic F",
+          "info": "WKN: A12GMG",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "GlobalPortfolioOne",
+          "info": "WKN: A2PT6U",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "ACATIS Datini Valueflex Fonds A",
+          "info": "WKN: A1H72F",
+          "type": "",
+          "ertrag": ""
+        }
+      ]
+    },
+    {
+      "blockId": "block-maerkte",
+      "blockTitle": "Märkte",
+      "allocation": 0,
+      "funds": [
+        {
+          "name": "iShares Core MSCI World UCITS ETF",
+          "info": "WKN: A0RPWH",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "Aktienstrategie MultiManager",
+          "info": "WKN: A0M5RD",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "Eleva European Selection Fund",
+          "info": "WKN: A2PKNU",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "AB SICAV - American Growth Port.",
+          "info": "WKN: 986838",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "iShares Core S&P 500 UCITS ETF",
+          "info": "WKN: A0YEDG",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "AXA IM Nasdaq 100 UCITS ETF",
+          "info": "WKN: A3DXEB",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "Xtrackers Nikkei 225 UCITS ETF",
+          "info": "WKN: DBX0NJ",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "iShares MSCI EM Asia UCITS ETF",
+          "info": "WKN: A1C1H5",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "BGF World Mining Fund",
+          "info": "WKN: 986932",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "BGF World Gold Fund",
+          "info": "WKN: 974119",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "Xtrackers Art. Intel. & Big Data ETF",
+          "info": "WKN: A2NGLC",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "LBBW Sicher Leben",
+          "info": "WKN: LB6B0M",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "Sauren Global Opportunities",
+          "info": "WKN: 930921",
+          "type": "",
+          "ertrag": ""
+        }
+      ]
+    },
+    {
+      "blockId": "block-spezial",
+      "blockTitle": "Spezialitäten / Themen",
+      "allocation": 0,
+      "funds": [
+        {
+          "name": "Wellington Enduring Infrastructure Assets",
+          "info": "WKN: A2PGYQ",
+          "type": "",
+          "ertrag": ""
+        },
+        {
+          "name": "US EquityFlex I",
+          "info": "WKN: A12E0R",
+          "type": "",
+          "ertrag": ""
+        }
+      ]
+    }
+  ],
+  "globals": {
+    "totalInvestment": 609504.05,
+    "totalSparrate": 0,
+    "fundInvestments": {
+      "block-kasse::ZinsPlus": 25037.42,
+      "block-kasse::Basis-Fonds I Nachhaltig": 50050.5,
+      "block-kasse::Renten Strategie K": 25055.31,
+      "block-kasse::iShares iBonds Dec 2028 Term E.": 24805.24,
+      "block-defensiv::ACATIS IFK Value Renten": 15063.73,
+      "block-defensiv::Vanguard EUR Corporate Bond": 9973.54,
+      "block-kasse::Carmignac Credit 2027": 10023.15,
+      "block-kasse::Carmignac Credit 2029": 10050.68,
+      "block-kasse::Carmignac Portfolio Flexible Bond": 21841.1,
+      "block-maerkte::iShares Core MSCI World UCITS ETF": 10258.88,
+      "block-dynamisch::smarTrack dynamic B": 15449.0,
+      "block-maerkte::Aktienstrategie MultiManager": 15398.61,
+      "block-maerkte::Eleva European Selection Fund": 10441.75,
+      "block-maerkte::AB SICAV - American Growth Port.": 10465.18,
+      "block-maerkte::iShares Core S&P 500 UCITS ETF": 10236.53,
+      "block-maerkte::AXA IM Nasdaq 100 UCITS ETF": 5160.87,
+      "block-maerkte::Xtrackers Nikkei 225 UCITS ETF": 15623.99,
+      "block-maerkte::iShares MSCI EM Asia UCITS ETF": 15477.86,
+      "block-spezial::Wellington Enduring Infrastructure Assets": 9870.4,
+      "block-maerkte::BGF World Mining Fund": 5374.72,
+      "block-maerkte::BGF World Gold Fund": 10749.75,
+      "block-maerkte::Xtrackers Art. Intel. & Big Data ETF": 5180.62,
+      "block-maerkte::LBBW Sicher Leben": 15938.94,
+      "block-defensiv::Sauren Global Defensiv": 5040.11,
+      "block-defensiv::BKC Treuhand Portfolio": 15107.2,
+      "block-defensiv::EB - Multi Asset Conservative": 15170.36,
+      "block-ausgewogen::Sauren Global Balanced": 15243.26,
+      "block-ausgewogen::MEAG EuroBalance": 15404.06,
+      "block-dynamisch::ACATIS Value Event Fonds": 10222.58,
+      "block-dynamisch::GANÉ Value Event Fund M": 10018.52,
+      "block-ausgewogen::Swisscanto Portfolio Fund Sust. Balanced": 10273.49,
+      "block-dynamisch::FMM-Fonds": 14944.88,
+      "block-maerkte::Sauren Global Opportunities": 25749.53,
+      "block-dynamisch::BL Global 75": 25352.16,
+      "block-dynamisch::FvS - Multiple Opportunities R": 20145.75,
+      "block-dynamisch::FERI Core Strategy Dynamic F": 17770.63,
+      "block-dynamisch::GlobalPortfolioOne": 25168.82,
+      "block-spezial::US EquityFlex I": 20897.22,
+      "block-dynamisch::ACATIS Datini Valueflex Fonds A": 15467.71
+    },
+    "fundSparrates": {}
+  }
+}

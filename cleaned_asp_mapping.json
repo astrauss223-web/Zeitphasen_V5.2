@@ -1,0 +1,896 @@
+[
+  {
+    "name": "Basis-Fonds I Nachhaltig",
+    "wkn": "847809",
+    "isin": "DE0008478090",
+    "anlageschwerpunkt": "Anleihen Euro Kurz"
+  },
+  {
+    "name": "BlackRock ESG Fixed Income Strat.",
+    "wkn": "A0NDDA",
+    "isin": "LU0438336264",
+    "anlageschwerpunkt": "Anleihen flexibel defensiv"
+  },
+  {
+    "name": "Carmignac Credit 2029",
+    "wkn": "A3EXGB",
+    "isin": "FR001400KAX8",
+    "anlageschwerpunkt": "Anleihen Hochzins Laufzeit"
+  },
+  {
+    "name": "Carmignac Credit 2031",
+    "wkn": "A40Y9T",
+    "isin": null,
+    "anlageschwerpunkt": "Anleihen Hochzins Laufzeit"
+  },
+  {
+    "name": "Carmignac Portfolio Flexible Bond",
+    "wkn": "A417MG",
+    "isin": "LU3060210526",
+    "anlageschwerpunkt": "Anleihen flexibel defensiv"
+  },
+  {
+    "name": "Carmignac Portfolio Flexible Bond A",
+    "wkn": "A0M9A2",
+    "isin": "FR0010149120",
+    "anlageschwerpunkt": "Anleihen flexibel defensiv"
+  },
+  {
+    "name": "Flossbach von Storch - Bond Defensive",
+    "wkn": "A2P2FU",
+    "isin": "LU2207302121",
+    "anlageschwerpunkt": "Anleihen Euro Mittel"
+  },
+  {
+    "name": "iShares EUR Government Bond 0-1yr",
+    "wkn": "A0RGEL",
+    "isin": "IE00B3FH7618",
+    "anlageschwerpunkt": "Anleihen Euro Kurz"
+  },
+  {
+    "name": "iShares iBonds Dec 2025 Term E.",
+    "wkn": "A3EFXA",
+    "isin": "IE000NXQKHU1",
+    "anlageschwerpunkt": "Anleihen Euro kurz Laufzeit"
+  },
+  {
+    "name": "iShares iBonds Dec 2026 Term E.",
+    "wkn": "A3D8E3",
+    "isin": "IE000SIZJZ82",
+    "anlageschwerpunkt": "Anleihen Euro kurz Laufzeit"
+  },
+  {
+    "name": "iShares iBonds Dec 2028 Term E.",
+    "wkn": "A3D8E7",
+    "isin": "IE000264WWY0",
+    "anlageschwerpunkt": "Anleihen Euro Kurz"
+  },
+  {
+    "name": "iShares iBonds Dec 2029 Term EUR Corp UCITS ETF",
+    "wkn": "A3EK6B",
+    "isin": "IE000IHURBR0",
+    "anlageschwerpunkt": "Anleihen Euro kurz Laufzeit"
+  },
+  {
+    "name": "Renten Strategie K",
+    "wkn": "979952",
+    "isin": "DE0009799528",
+    "anlageschwerpunkt": "Anleihen Euro Kurz"
+  },
+  {
+    "name": "Xtrackers Target Mat Sept 2027",
+    "wkn": "DBX0VA",
+    "isin": "LU2673523218",
+    "anlageschwerpunkt": "Anleihen Euro kurz Laufzeit"
+  },
+  {
+    "name": "ZinsPlus",
+    "wkn": "A0MUWS",
+    "isin": "DE000A0MUWS7",
+    "anlageschwerpunkt": "Geldmarkt plus"
+  },
+  {
+    "name": "ACATIS IFK Value Renten",
+    "wkn": "A0X758",
+    "isin": "DE000A0X7582",
+    "anlageschwerpunkt": "Anleihen Welt"
+  },
+  {
+    "name": "Ampega Rendite Rentenfonds",
+    "wkn": "848105",
+    "isin": "DE0008481052",
+    "anlageschwerpunkt": "Anleihen Euro"
+  },
+  {
+    "name": "Allianz Multi Asset Risk Control",
+    "wkn": "A0LBPU",
+    "isin": null,
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv"
+  },
+  {
+    "name": "BKC Treuhand Portfolio",
+    "wkn": "A0YFQ9",
+    "isin": "DE000A0YFQ92",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv"
+  },
+  {
+    "name": "DWS Concept DJE Alpha Renten Global",
+    "wkn": "974515",
+    "isin": "LU0087412390",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv"
+  },
+  {
+    "name": "DWS Invest Euro High Yield Corp.",
+    "wkn": "DWS04F",
+    "isin": "LU0616839766",
+    "anlageschwerpunkt": "Anleihen Hochzins"
+  },
+  {
+    "name": "EB - Multi Asset Conservative",
+    "wkn": "A1JUU9",
+    "isin": "DE000A1JUU95",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv"
+  },
+  {
+    "name": "Flossbach von Storch - Multi Asset Def.",
+    "wkn": "A0M43U",
+    "isin": "LU0323577923",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv"
+  },
+  {
+    "name": "Invesco Pan European High Income Fund",
+    "wkn": "A2H61M",
+    "isin": "LU1775955647",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv"
+  },
+  {
+    "name": "iShares Core Global Aggregate Bond",
+    "wkn": "A0RGEQ",
+    "isin": "IE00B3F81409",
+    "anlageschwerpunkt": "Anleihen Welt"
+  },
+  {
+    "name": "Lazard Nordic High Yield Bond",
+    "wkn": "A3DTD2",
+    "isin": "IE000F8BEZE4",
+    "anlageschwerpunkt": "Anleihen Hochzins"
+  },
+  {
+    "name": "Morgan Stanley - Global Convertible Bond",
+    "wkn": "633596",
+    "isin": null,
+    "anlageschwerpunkt": "Wandelanleihen"
+  },
+  {
+    "name": "ODDO BHF Polaris Moderate",
+    "wkn": "A2JJ1S",
+    "isin": "DE000A2JJ1S3",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv"
+  },
+  {
+    "name": "PIMCO Strategic Income Fund",
+    "wkn": "A1W76Y",
+    "isin": "IE00B7KFL990",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv"
+  },
+  {
+    "name": "Rentenstrategie MultiManager A",
+    "wkn": "A0M5RE",
+    "isin": "LU0326856028",
+    "anlageschwerpunkt": "Anleihen Hochzins"
+  },
+  {
+    "name": "Rentenstrategie MultiManager I",
+    "wkn": "A41FXL",
+    "isin": null,
+    "anlageschwerpunkt": "Anleihen Hochzins"
+  },
+  {
+    "name": "Arete PRIME VALUES Income",
+    "wkn": "986054",
+    "isin": "LU0111594647",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv"
+  },
+  {
+    "name": "Sauren Global Defensiv",
+    "wkn": "214466",
+    "isin": "LU0163675910",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv"
+  },
+  {
+    "name": "Schroder ISF Sustainable Euro Credit",
+    "wkn": "A2PXFB",
+    "isin": "LU2080003614",
+    "anlageschwerpunkt": "Unternehmensanleihen Euro"
+  },
+  {
+    "name": "T. Rowe Price - Diversified Income",
+    "wkn": "A2DW8B",
+    "isin": "LU1676121723",
+    "anlageschwerpunkt": "Anleihen Welt"
+  },
+  {
+    "name": "Vanguard EUR Corporate Bond",
+    "wkn": "A143JK",
+    "isin": "IE00BZ163G84",
+    "anlageschwerpunkt": "Unternehmensanleihen Europa"
+  },
+  {
+    "name": "Vanguard EUR Eurozone Government",
+    "wkn": "A143JL",
+    "isin": "IE00BZ163H91",
+    "anlageschwerpunkt": "Anleihen Euro"
+  },
+  {
+    "name": "ACATIS Value Event Fonds A",
+    "wkn": "A0X754",
+    "isin": "DE000A0X7541",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen"
+  },
+  {
+    "name": "Allianz Income and Growth",
+    "wkn": "A1J24Q",
+    "isin": null,
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen"
+  },
+  {
+    "name": "Dynamic Global Balance",
+    "wkn": "A0EAWB",
+    "isin": "DE000A0EAWB2",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen"
+  },
+  {
+    "name": "FERI Core Strategy Balanced F",
+    "wkn": "A12GMF",
+    "isin": "LU1155658856",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen"
+  },
+  {
+    "name": "Guinness Global Equity Income",
+    "wkn": "A2DKZV",
+    "isin": "IE00BD0NVN71",
+    "anlageschwerpunkt": "Aktien Dividendenstrategie"
+  },
+  {
+    "name": "MEAG EuroBalance",
+    "wkn": "975745",
+    "isin": "DE0009757450",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen"
+  },
+  {
+    "name": "MFS Prudent Capital",
+    "wkn": "A2ANEB",
+    "isin": "LU1442549025",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch"
+  },
+  {
+    "name": "Nordea Global Stable Equity",
+    "wkn": "591135",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "ODDO BHF Polaris Flexible",
+    "wkn": "A0M003",
+    "isin": "LU0319572730",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen"
+  },
+  {
+    "name": "Phaidros Funds - Balanced",
+    "wkn": "A0MN91",
+    "isin": "LU0295585748",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen"
+  },
+  {
+    "name": "Arete PRIME VALUES Growth",
+    "wkn": "987852",
+    "isin": "LU0111592369",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen"
+  },
+  {
+    "name": "Sauren Global Balanced",
+    "wkn": "930920",
+    "isin": "LU0106280836",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen"
+  },
+  {
+    "name": "Swisscanto Portfolio Fund Sust. Balanced",
+    "wkn": "A41MQN",
+    "isin": "LU2637080321",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen"
+  },
+  {
+    "name": "X of the Best - ausgewogen",
+    "wkn": "A1CVCD",
+    "isin": "LU0497150481",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen"
+  },
+  {
+    "name": "ACATIS Datini Valueflex Fonds A",
+    "wkn": "A1H72F",
+    "isin": null,
+    "anlageschwerpunkt": "Spezialitäten Multi-Asset"
+  },
+  {
+    "name": "ACATIS Value Event Fonds",
+    "wkn": "A2DR2M",
+    "isin": null,
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen"
+  },
+  {
+    "name": "Allianz Better World Dynamic",
+    "wkn": "A3CUB5",
+    "isin": "LU2364421870",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch"
+  },
+  {
+    "name": "Arabesque Global ESG Flexible Allocation",
+    "wkn": "A12HQR",
+    "isin": "LU1164757400",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch"
+  },
+  {
+    "name": "BL Global 75",
+    "wkn": "986855",
+    "isin": "LU0048293285",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch"
+  },
+  {
+    "name": "DWS ESG Dynamic Opportunities",
+    "wkn": "DWS17J",
+    "isin": "DE000DWS17J0",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch"
+  },
+  {
+    "name": "FERI Core Strategy Dynamic F",
+    "wkn": "A12GMG",
+    "isin": "LU1155658930",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch"
+  },
+  {
+    "name": "FERI Sustainable Quality",
+    "wkn": "A2PKR1",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "FMM-Fonds",
+    "wkn": "847811",
+    "isin": "DE0008478116",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch"
+  },
+  {
+    "name": "FS Exponential Technologies P",
+    "wkn": "A2DMRL",
+    "isin": "LU1575871881",
+    "anlageschwerpunkt": "Aktien Technologie"
+  },
+  {
+    "name": "FvS - Multiple Opportunities R",
+    "wkn": "A0M430",
+    "isin": "LU0323578657",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch"
+  },
+  {
+    "name": "GANÉ Value Event Fund M",
+    "wkn": "A407LK",
+    "isin": "DE000A407LK3",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen"
+  },
+  {
+    "name": "GlobalPortfolioOne",
+    "wkn": "A2PT6U",
+    "isin": "AT0000A2B4T3",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch"
+  },
+  {
+    "name": "JPM Total Emerging Markets Income",
+    "wkn": "A1W5Y6",
+    "isin": "LU0974360454",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch"
+  },
+  {
+    "name": "smarTrack balanced B",
+    "wkn": "A2PSGG",
+    "isin": "LU1717097338",
+    "anlageschwerpunkt": "50% Aktien/50% Anleihen"
+  },
+  {
+    "name": "smarTrack dynamic B",
+    "wkn": "A2PSGE",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "smarTrack growth B",
+    "wkn": "A2PSGF",
+    "isin": "LU1717097767",
+    "anlageschwerpunkt": "80% Aktien/20% Anleihen"
+  },
+  {
+    "name": "X of the Best - dynamisch",
+    "wkn": "A0Q5MC",
+    "isin": "LU0374994712",
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "ÖkoWorld ÖkoVision Classic",
+    "wkn": "974968",
+    "isin": "LU0061928585",
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "AB SICAV - American Growth Port.",
+    "wkn": "986838",
+    "isin": "LU0077335932",
+    "anlageschwerpunkt": "Aktien USA"
+  },
+  {
+    "name": "Aktienstrategie MultiManager",
+    "wkn": "A0M5RD",
+    "isin": "LU0326856845",
+    "anlageschwerpunkt": "Aktien Welt (mittlere/kleine Unternehmen)"
+  },
+  {
+    "name": "DWS Concept Kaldemorgen",
+    "wkn": "DWSK01",
+    "isin": null,
+    "anlageschwerpunkt": "Absolute Return dynamisch"
+  },
+  {
+    "name": "Eleva European Selection Fund A",
+    "wkn": "A2PKNU",
+    "isin": "LU1610664406",
+    "anlageschwerpunkt": "Aktien Europa"
+  },
+  {
+    "name": "Eleva European Selection Fund R",
+    "wkn": "A14M2T",
+    "isin": "LU1111643711",
+    "anlageschwerpunkt": "Aktien Europa"
+  },
+  {
+    "name": "FERI Systematic Global Equity I",
+    "wkn": "A3EV9X",
+    "isin": "LU2669794443",
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "Morgan Stanley - Global Opportunity",
+    "wkn": "A1H6XK",
+    "isin": "LU0552385295",
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "Pictet - Quest Europe Sust. Equities",
+    "wkn": "750443",
+    "isin": "LU0144509717",
+    "anlageschwerpunkt": "Aktien Europa"
+  },
+  {
+    "name": "Sauren Global Opportunities",
+    "wkn": "930921",
+    "isin": "LU0106280745",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch"
+  },
+  {
+    "name": "Schroder ISF Asian Opportunities",
+    "wkn": "973045",
+    "isin": "LU0048388663",
+    "anlageschwerpunkt": "Aktien Asien ex Japan"
+  },
+  {
+    "name": "terrAssisi Aktien I AMI",
+    "wkn": "984734",
+    "isin": "DE0009847343",
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "Triodos Pioneer Impact Fund",
+    "wkn": "A4039Q",
+    "isin": "LU2723591728",
+    "anlageschwerpunkt": "Aktien Welt (mittlere/kleine Unternehmen)"
+  },
+  {
+    "name": "Amundi MSCI World Small Cap",
+    "wkn": "A2PK9Q",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Welt (mittlere/kleine Unternehmen)"
+  },
+  {
+    "name": "AXA IM Nasdaq 100 UCITS ETF",
+    "wkn": "A3DXEB",
+    "isin": "IE000QDFFK00",
+    "anlageschwerpunkt": "Aktien USA"
+  },
+  {
+    "name": "AXA WF Framlington Digital Economy",
+    "wkn": "A2JJJ5",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Technologie"
+  },
+  {
+    "name": "BGF World Healthscience Fund",
+    "wkn": "A0LFV6",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Biotech/Pharma"
+  },
+  {
+    "name": "BGF World Gold Fund",
+    "wkn": "974119",
+    "isin": "LU0055631609",
+    "anlageschwerpunkt": "Aktien Gold/Edelmetalle"
+  },
+  {
+    "name": "Factor UCITS ETF",
+    "wkn": "A2JDDJ",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "Fidelity Funds - Germany",
+    "wkn": "A0LF01",
+    "isin": "LU0261948227",
+    "anlageschwerpunkt": "Aktien Deutschland"
+  },
+  {
+    "name": "Fidelity Funds - Global Technology",
+    "wkn": "921800",
+    "isin": "LU0115765816",
+    "anlageschwerpunkt": "Aktien Technologie"
+  },
+  {
+    "name": "GS India Equity Portfolio",
+    "wkn": "A0NDKJ",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Indien"
+  },
+  {
+    "name": "FSSA Greater China Growth Fund",
+    "wkn": "A0LHAL",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien China"
+  },
+  {
+    "name": "Global X Uranium UCITS ETF",
+    "wkn": "A3DC8S",
+    "isin": "IE000NDUGN37",
+    "anlageschwerpunkt": "Aktien Rohstoffe"
+  },
+  {
+    "name": "iShares Core S&P 500 UCITS ETF",
+    "wkn": "A0YEDG",
+    "isin": "IE00B5BMR087",
+    "anlageschwerpunkt": "Aktien USA"
+  },
+  {
+    "name": "UBS Core S&P 500 UCITS ETF",
+    "wkn": "A1JVB5",
+    "isin": "IE00B7K93397",
+    "anlageschwerpunkt": "Aktien USA"
+  },
+  {
+    "name": "iShares Digital Security UCITS ETF",
+    "wkn": "A2JMGE",
+    "isin": "IE00BG0J4C88",
+    "anlageschwerpunkt": "Aktien Technologie"
+  },
+  {
+    "name": "iShares Edge MSCI World Value Factor UCITS ETF",
+    "wkn": "A3EHRE",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "iShares Core MSCI World UCITS ETF",
+    "wkn": "A0RPWH",
+    "isin": "IE00B4L5Y983",
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "UBS Core MSCI World UCITS ETF",
+    "wkn": "A2PKSJ",
+    "isin": "IE00BD4TXV59",
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "iShares MSCI EM Latin America UCITS ETF",
+    "wkn": "A0NA45",
+    "isin": "IE00B27YCK28",
+    "anlageschwerpunkt": "Aktien Lateinamerika"
+  },
+  {
+    "name": "iShares MSCI EM Asia UCITS ETF",
+    "wkn": "A1C1H5",
+    "isin": "IE00B5L8K969",
+    "anlageschwerpunkt": "Aktien Asien ex Japan"
+  },
+  {
+    "name": "iShares MSCI World IT UCITS ETF",
+    "wkn": "A0RCVV",
+    "isin": "IE00B3WJKG14",
+    "anlageschwerpunkt": "Aktien nachhaltige Technologien"
+  },
+  {
+    "name": "iShares MSCI World Small Cap ETF",
+    "wkn": "A2DWBY",
+    "isin": "IE00BF4RFH31",
+    "anlageschwerpunkt": "Aktien Welt (mittlere/kleine Unternehmen)"
+  },
+  {
+    "name": "iShares NASDAQ US Biotechnology",
+    "wkn": "A2DWAW",
+    "isin": "IE00BYXG2H39",
+    "anlageschwerpunkt": "Aktien Biotech/Pharma"
+  },
+  {
+    "name": "Janus Henderson Horizon Pan Eur. Smaller",
+    "wkn": "989229",
+    "isin": "LU0088927925",
+    "anlageschwerpunkt": "Aktien Europa (mittl./kleine Unt.)"
+  },
+  {
+    "name": "Nomura India Equity Fund",
+    "wkn": "A1C9ED",
+    "isin": "IE00B35HDY84",
+    "anlageschwerpunkt": "Aktien Indien"
+  },
+  {
+    "name": "Pictet - Water",
+    "wkn": "A0MN9Y",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Wassertechnologie"
+  },
+  {
+    "name": "Robeco Asia-Pacific Equities",
+    "wkn": "988149",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Asien inklusive Japan"
+  },
+  {
+    "name": "Schroder ISF Frontier Markets Equity",
+    "wkn": "A1C9QD",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Frontier Markets"
+  },
+  {
+    "name": "UBS MSCI ACWI Socially Resp. ETF",
+    "wkn": "A2PL58",
+    "isin": "IE00BDR55L72",
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "UBS MSCI ACWI SRI UCITS ETF",
+    "wkn": "A2PL5B",
+    "isin": "IE00BDR55471",
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "UBS MSCI World SRI UCITS ETF",
+    "wkn": "A2PZBH",
+    "isin": "IE00BK72HH44",
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "VanEck Defense UCITS ETF",
+    "wkn": "A3D9M1",
+    "isin": "IE000YYE6WK5",
+    "anlageschwerpunkt": "Aktien Rüstung/Sicherheit"
+  },
+  {
+    "name": "Vanguard FTSE Developed Europe ETF",
+    "wkn": "A1T8FS",
+    "isin": "IE00B945VV12",
+    "anlageschwerpunkt": "Aktien Europa"
+  },
+  {
+    "name": "Xtrackers MSCI Taiwan UCITS ETF",
+    "wkn": "A1W4T0",
+    "isin": "IE00B839F464",
+    "anlageschwerpunkt": "Aktien Taiwan"
+  },
+  {
+    "name": "Xtrackers Art. Intel. & Big Data ETF",
+    "wkn": "A2N6LC",
+    "isin": "IE00BGV5VN51",
+    "anlageschwerpunkt": "Aktien Technologie"
+  },
+  {
+    "name": "Xtrackers DAX UCITS ETF",
+    "wkn": "DBX1DA",
+    "isin": "LU0274211480",
+    "anlageschwerpunkt": "Aktien Deutschland"
+  },
+  {
+    "name": "Xtrackers Euro Stoxx 50 UCITS ETF",
+    "wkn": "DBX1EU",
+    "isin": "LU0274211217",
+    "anlageschwerpunkt": "Aktien Europa"
+  },
+  {
+    "name": "Xtrackers MSCI EM UCITS ETF",
+    "wkn": "A12GVR",
+    "isin": "IE00BTJRMP35",
+    "anlageschwerpunkt": "Aktien Schwellenländer Welt"
+  },
+  {
+    "name": "Xtrackers MSCI World Energy ETF",
+    "wkn": "A113FF",
+    "isin": "IE00BP3QZB59",
+    "anlageschwerpunkt": "Aktien Energie"
+  },
+  {
+    "name": "Xtrackers MSCI World UCITS ETF",
+    "wkn": "A1XB5V",
+    "isin": "IE00BJ0KDQ92",
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "Xtrackers Nikkei 225 UCITS ETF",
+    "wkn": "DBX0NJ",
+    "isin": "LU0839027447",
+    "anlageschwerpunkt": "Aktien Japan"
+  },
+  {
+    "name": "Invesco MSCI World Equal Weight UCITS ETF",
+    "wkn": "A40G12",
+    "isin": "IE000OEF2551",
+    "anlageschwerpunkt": "Aktien Welt"
+  },
+  {
+    "name": "Franklin FTSE China UCITS ETF",
+    "wkn": "A2PB5V",
+    "isin": "IE00BHZRR147",
+    "anlageschwerpunkt": "Aktien China"
+  },
+  {
+    "name": "Amundi MSCI New Energy UCITS ETF",
+    "wkn": "LYX0CB",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Erneuerbare Energien"
+  },
+  {
+    "name": "BGF World Mining Fund",
+    "wkn": "986932",
+    "isin": "LU0075056555",
+    "anlageschwerpunkt": "Aktien Rohstoffe"
+  },
+  {
+    "name": "DJE - Gold & Stabilitätsfonds",
+    "wkn": "A0M67Q",
+    "isin": "LU0323357649",
+    "anlageschwerpunkt": "Sachwerte"
+  },
+  {
+    "name": "DNB Fund Renewable Energy",
+    "wkn": "A0MWAL",
+    "isin": "LU0302296149",
+    "anlageschwerpunkt": "Aktien Erneuerbare Energien"
+  },
+  {
+    "name": "HansaGold",
+    "wkn": "A0NEKK",
+    "isin": "DE000A0NEKK2",
+    "anlageschwerpunkt": "Sachwerte: Gold"
+  },
+  {
+    "name": "Janus Henderson Horizon Global Tech.",
+    "wkn": "A0MP0Q",
+    "isin": "LU0264738294",
+    "anlageschwerpunkt": "Immobilienaktien Welt"
+  },
+  {
+    "name": "LBBW Sicher Leben",
+    "wkn": "LB6B0M",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Rüstung/Sicherheit"
+  },
+  {
+    "name": "OptoFlex I",
+    "wkn": "A1J4YY",
+    "isin": "DE000A1J4YY2",
+    "anlageschwerpunkt": "Alternative Volatilitätsstrategien - ausgewogen"
+  },
+  {
+    "name": "Pictet - Robotics",
+    "wkn": "A141Q9",
+    "isin": "LU1279334053",
+    "anlageschwerpunkt": "Aktien Technologie"
+  },
+  {
+    "name": "Pictet - Timber",
+    "wkn": "A0QZ7T",
+    "isin": "LU0340559557",
+    "anlageschwerpunkt": "Aktien Wald/Holz"
+  },
+  {
+    "name": "Robeco Sustainable Water",
+    "wkn": "A2QBUQ",
+    "isin": "LU2146190835",
+    "anlageschwerpunkt": "Aktien Wassertechnologie"
+  },
+  {
+    "name": "Vontobel Fund - Commodity",
+    "wkn": "A2JKK0",
+    "isin": "LU1683488867",
+    "anlageschwerpunkt": "Rohstoffe"
+  },
+  {
+    "name": "EuroEquityFlex I",
+    "wkn": "A2QD6N",
+    "isin": "LU2241121495",
+    "anlageschwerpunkt": "Alternative Volatilitätsstrategien - dynamisch"
+  },
+  {
+    "name": "US EquityFlex I",
+    "wkn": "A12E0R",
+    "isin": null,
+    "anlageschwerpunkt": "Alternative Volatilitätsstrategien - dynamisch"
+  },
+  {
+    "name": "US EquityFlex P",
+    "wkn": "A12E0S",
+    "isin": null,
+    "anlageschwerpunkt": "Alternative Volatilitätsstrategien - dynamisch"
+  },
+  {
+    "name": "Wellington Enduring Infrastructure Assets",
+    "wkn": "A2PGYQ",
+    "isin": null,
+    "anlageschwerpunkt": "Aktien Infrastruktur"
+  },
+  {
+    "name": "Basis-Fonds I Nachhaltig",
+    "wkn": "847809",
+    "isin": "DE0008478090",
+    "anlageschwerpunkt": "Anleihen Euro Kurz"
+  },
+  {
+    "name": "Flossbach von Storch - Bond",
+    "wkn": "A2P9FU",
+    "isin": null,
+    "anlageschwerpunkt": "Anleihen Euro Mittel"
+  },
+  {
+    "name": "iShares EUR Government Bond 0-1yr",
+    "wkn": "A0RGEL",
+    "isin": "IE00B3FH7618",
+    "anlageschwerpunkt": "Anleihen Euro Kurz"
+  },
+  {
+    "name": "iShares iBonds Dec 2026 Term E.",
+    "wkn": "A3D8E3",
+    "isin": "IE000SIZJZ82",
+    "anlageschwerpunkt": "Anleihen Euro kurz Laufzeit"
+  },
+  {
+    "name": "iShares iBonds Dec 2028 Term E.",
+    "wkn": "A3D8E7",
+    "isin": "IE000264WWY0",
+    "anlageschwerpunkt": "Anleihen Euro Kurz"
+  },
+  {
+    "name": "Renten Strategie K",
+    "wkn": "979951",
+    "isin": "DE0009799528",
+    "anlageschwerpunkt": "Anleihen Euro Kurz"
+  },
+  {
+    "name": "Tagesgeldkonto",
+    "wkn": null,
+    "isin": null,
+    "anlageschwerpunkt": "Geldmarkt"
+  },
+  {
+    "name": "Xtrackers Target Mat Sept 2027",
+    "wkn": "DBX0VA",
+    "isin": "LU2673523218",
+    "anlageschwerpunkt": "Anleihen Euro kurz Laufzeit"
+  },
+  {
+    "name": "ZinsPlus",
+    "wkn": "A0MUWS",
+    "isin": "DE000A0MUWS7",
+    "anlageschwerpunkt": "Geldmarkt plus"
+  }
+]

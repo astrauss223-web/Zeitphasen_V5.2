@@ -1,0 +1,1091 @@
+[
+  {
+    "page": 1,
+    "name": "AB SICAV - American Growth Portfolio",
+    "wkn": "986838",
+    "isin": "LU0079474960",
+    "anlageschwerpunkt": "Aktien USA",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 1,
+    "name": "ACATIS Datini Valueflex Fonds",
+    "wkn": "A1H72F",
+    "isin": "DEOO0A1H72F1",
+    "anlageschwerpunkt": "Spezialitäten Multi- Asset",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Weites Benchmarking Aktien"
+  },
+  {
+    "page": 1,
+    "name": "ACATIS IfK Value Renten",
+    "wkn": "AOX758",
+    "isin": "DEQOOA0X7582",
+    "anlageschwerpunkt": "Anleihen Welt",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen (07. Hochzins mittlere Rectlaufzeiten)"
+  },
+  {
+    "page": 1,
+    "name": "ACATIS Value Event Fonds D",
+    "wkn": "A2DR2M",
+    "isin": "DEOOOA2DR2MO",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Aktien/Anleihen"
+  },
+  {
+    "page": 1,
+    "name": "Aktienstrategie MultiManager",
+    "wkn": "AOM5RD",
+    "isin": "LU0326856845",
+    "anlageschwerpunkt": "Aktien Welt (mittlere/kleine Unternehmen)",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 1,
+    "name": "Allianz Better World Dynamic",
+    "wkn": "A3CUBS",
+    "isin": "LU2364421870",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Aktien/Anleihen"
+  },
+  {
+    "page": 1,
+    "name": "Allianz Income and Growth",
+    "wkn": "A124Q",
+    "isin": "LU0820561818",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen/Aktien (Anleihen > Aktien)"
+  },
+  {
+    "page": 1,
+    "name": "Allianz Multi Asset Risk Control",
+    "wkn": "AOLBPU",
+    "isin": "LU0268212239",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Schwankungsgemanagt"
+  },
+  {
+    "page": 1,
+    "name": "Ampega Rendite Rentenfonds",
+    "wkn": "848105",
+    "isin": "DE0008481052",
+    "anlageschwerpunkt": "Anleihen Euro",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen (06. Staats- und Unternehmensanleihen mittlere Restlaufzeiten)"
+  },
+  {
+    "page": 1,
+    "name": "Amundi MSCI New Energy UCITS ETF",
+    "wkn": "LYXOCB",
+    "isin": "FROO10524777",
+    "anlageschwerpunkt": "Aktien Erneuerbare Energien",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 1,
+    "name": "Basis-Fonds | Nachhaltig",
+    "wkn": "847809",
+    "isin": "DE0008478090",
+    "anlageschwerpunkt": "Anleihen Euro kurz",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Zielrendite (nur Anleihen)"
+  },
+  {
+    "page": 1,
+    "name": "BGF World Gold Fund",
+    "wkn": "974119",
+    "isin": "LU0055631609",
+    "anlageschwerpunkt": "Aktien Gold/Edelmetalle",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 1,
+    "name": "BGF World Healthscience Fund",
+    "wkn": "AOBL36",
+    "isin": "LU0171307068",
+    "anlageschwerpunkt": "Aktien Biotech/Pharma",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 1,
+    "name": "BGF World Mining Fund",
+    "wkn": "986932",
+    "isin": "LU0075056555",
+    "anlageschwerpunkt": "Aktien Rohstoffe",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 1,
+    "name": "BKC Treuhand Portfolio",
+    "wkn": "AOYFQ9",
+    "isin": "DEOOOAOYFQ92",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Anleihen"
+  },
+  {
+    "page": 1,
+    "name": "BL Global 75",
+    "wkn": "986855",
+    "isin": "LU0048293285",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Aktien"
+  },
+  {
+    "page": 1,
+    "name": "BNP PARIBAS Easy II Nasdaq 100 UCIT...",
+    "wkn": "A3DXEB",
+    "isin": "IEQOOQDFFKOO",
+    "anlageschwerpunkt": "Aktien USA",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 1,
+    "name": "Carmignac Credit 2029",
+    "wkn": "A3EXGB",
+    "isin": "FROO1400KAY8",
+    "anlageschwerpunkt": "Anleihen Hochzins Laufzeit",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen (11. Hochzins Laufzeitfonds)"
+  },
+  {
+    "page": 1,
+    "name": "Carmignac Credit 2031",
+    "wkn": "A40Y9T",
+    "isin": "FROO1400U4V7",
+    "anlageschwerpunkt": "Anleihen Hochzins Laufzeit",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen (11. Hochzins Laufzeitfonds)"
+  },
+  {
+    "page": 1,
+    "name": "Carmignac Portfolio Flexible Bond F",
+    "wkn": "A417MG AARACTA",
+    "isin": "LU3060210526 buns 2D DCI LAO",
+    "anlageschwerpunkt": "Anleihen flexibel defensiv",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Zielrendite (nur Anleihen) Weites Benchmarking"
+  },
+  {
+    "page": 1,
+    "name": "Me ONS ee ene iene DNB Fund Renewable Energy",
+    "wkn": "wes AOMWAL",
+    "isin": "BM EE ETS LU0302296149",
+    "anlageschwerpunkt": "vere Aktien Erneuerbare Energien",
+    "ertrag": "GMeektieekeens thesaurierend",
+    "kennzeichen": "Aktien/Anleihen/Edelmetalle Enges Benchmarking Aktien"
+  },
+  {
+    "page": 1,
+    "name": "DWS Concept DJE Alpha Renten Global",
+    "wkn": "974515",
+    "isin": "LU0087412390",
+    "anlageschwerpunkt": "Vermögensverwalter - doafaneiny",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Weites Benchmarking Anleihen"
+  },
+  {
+    "page": 2,
+    "name": "DWS Concept Kaldemorgen",
+    "wkn": "DWSKO1",
+    "isin": "LU0599946976",
+    "anlageschwerpunkt": "Absolute Return dynamisch",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Zielrendite (Multi Asset)"
+  },
+  {
+    "page": 2,
+    "name": "DWS ESG Dynamic Opportunities",
+    "wkn": "Dws17J",
+    "isin": "DEOOODWS17J0",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Weites Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "DWS Invest Euro High Yield Corporates",
+    "wkn": "DWSO4F",
+    "isin": "LU0616839766",
+    "anlageschwerpunkt": "Anleihen Hochzins",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen (07. Hochzins mittlere Rectlaufzeiten)"
+  },
+  {
+    "page": 2,
+    "name": "Dynamic Global Balance",
+    "wkn": "AOEAWB",
+    "isin": "DEQOOAOEAWB2",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Aktien/Anleihen"
+  },
+  {
+    "page": 2,
+    "name": "EB - Multi Asset Conservative",
+    "wkn": "Al1JUU9",
+    "isin": "DEOOOA1JUU95",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Anleihen"
+  },
+  {
+    "page": 2,
+    "name": "Eleva European Selection Fund R",
+    "wkn": "A14M2T",
+    "isin": "LU1111643711",
+    "anlageschwerpunkt": "Aktien Europa",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "EuroEquityFlex |",
+    "wkn": "A2QD6N",
+    "isin": "LU2241121495",
+    "anlageschwerpunkt": "Alt. Volatilitatsstra. - dynamisch",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "FERI Core Strategy Balanced F",
+    "wkn": "A12GMF",
+    "isin": "LU1155658856",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Aktien/Anleihen"
+  },
+  {
+    "page": 2,
+    "name": "FERI Core Strategy Dynamic F",
+    "wkn": "A12GMG",
+    "isin": "LU1155658930",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "FERI Sustainable Quality",
+    "wkn": "A2PKR1",
+    "isin": "CH0475047939",
+    "anlageschwerpunkt": "Aktien Welt",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "FERI Systematic Global Equity |",
+    "wkn": "A3EV9X",
+    "isin": "LU2669794443",
+    "anlageschwerpunkt": "Aktien Welt",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "Fidelity Funds - Germany",
+    "wkn": "AOLFO1",
+    "isin": "LU0261948227",
+    "anlageschwerpunkt": "Aktien Deutschland",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "Fidelity Funds - Global Technology",
+    "wkn": "921800",
+    "isin": "LU0099574567",
+    "anlageschwerpunkt": "Aktien Technologie",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "Flossbach von Storch - Bond Defensive",
+    "wkn": "A2P9FU",
+    "isin": "LU2207302121",
+    "anlageschwerpunkt": "Anleihen Euro Mittel",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Anleihen (02. Staats- und Unternehmensanleihen kurze Restlaufzeiten)"
+  },
+  {
+    "page": 2,
+    "name": "Flossbach von Storch - Multi Asset - ...",
+    "wkn": "AOM43U",
+    "isin": "LU0323577923",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Anleihen"
+  },
+  {
+    "page": 2,
+    "name": "FMM-Fonds",
+    "wkn": "847811",
+    "isin": "DE0008478116",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Weites Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "Franklin FTSE China UCITS ETF",
+    "wkn": "A2PB5V",
+    "isin": "IEOOBHZRR147",
+    "anlageschwerpunkt": "Aktien China",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "FS Exponential Technologies P",
+    "wkn": "A2DMRL",
+    "isin": "LU1575871881",
+    "anlageschwerpunkt": "Aktien Technologie",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "FSSA Greater China Growth Fund",
+    "wkn": "AOLHAL",
+    "isin": "1£0031814852",
+    "anlageschwerpunkt": "Aktien China",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "FvS - Multiple Opportunities R",
+    "wkn": "A0M430",
+    "isin": "LU0323578657",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "GANE Value Event Fund M",
+    "wkn": "A407LK",
+    "isin": "DEOO0A407LK3",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Aktien/Anleihen"
+  },
+  {
+    "page": 2,
+    "name": "Global X Uranium UCITS ETF",
+    "wkn": "A3DC8S",
+    "isin": "IEQOONDWFGAS",
+    "anlageschwerpunkt": "Aktien Rohstoffe",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "GlobalPortfolioOne",
+    "wkn": "A2PT6U",
+    "isin": "ATOOOOA2B4T3",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch",
+    "ertrag": "thesau",
+    "kennzeichen": "Weites Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "Guinness Global Equity Income",
+    "wkn": "A2DKZV",
+    "isin": "IEOQOBDGV0183",
+    "anlageschwerpunkt": "Aktien Dividendenstrategie",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "HansaGold",
+    "wkn": "AONEKK",
+    "isin": "DEQOOAONEKK1",
+    "anlageschwerpunkt": "Sachwerte: Gold",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Edelmetalle"
+  },
+  {
+    "page": 2,
+    "name": "Invesco MSCI World Equal Weight UC...",
+    "wkn": "A40G12",
+    "isin": "IEQOOOEF25S1",
+    "anlageschwerpunkt": "Aktien Welt",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "Invesco Pan European High Income F...",
+    "wkn": "A2H61M",
+    "isin": "LU1701701564",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen/Aktien (Anleihen > Aktien)"
+  },
+  {
+    "page": 2,
+    "name": "iShares Core Global Aggregate Bond ...",
+    "wkn": "AORGEQ",
+    "isin": "|EOOB3F81409",
+    "anlageschwerpunkt": "Anleihen Welt",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen (09. Staats- und Unternehmensanleihen Lange ey"
+  },
+  {
+    "page": 2,
+    "name": "iShares Digital Security UCITS ETF",
+    "wkn": "A2JMGE",
+    "isin": "IEOOBGOJ4C88",
+    "anlageschwerpunkt": "Aktien Technologie",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "RESTA Len) Enges Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "iShares Edge MSCI World Value Facto...",
+    "wkn": "A2JDDJ",
+    "isin": "IEOOBFYTYS33",
+    "anlageschwerpunkt": "Aktien Welt",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 2,
+    "name": "iShares EUR Government Bond 0-1yr ...",
+    "wkn": "AORGEL",
+    "isin": "|EOOB3FH7618",
+    "anlageschwerpunkt": "Anleihen Euro kurz",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen (01. Staatsanleihen kurze Rectlaifzeiten)"
+  },
+  {
+    "page": 2,
+    "name": "iShares iBonds Dec 2028 Term EUR C...",
+    "wkn": "A3D8E7",
+    "isin": "|E000264WWY0",
+    "anlageschwerpunkt": "Anleihen Euro kurz",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen"
+  },
+  {
+    "page": 3,
+    "name": "iShares iBonds Dec 2029 Term EUR C...",
+    "wkn": "A3EK6B",
+    "isin": "IEQOOIHURBRO",
+    "anlageschwerpunkt": "Anleihen Euro kurz Laufzeit",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "BEBE BEER ETTGENIN NS PME (10. Unternehmensanleihen Laufzeitfonds)"
+  },
+  {
+    "page": 3,
+    "name": "iShares MSCI EM Asia UCITS ETF",
+    "wkn": "A1C1HS",
+    "isin": "IEOOBSL8K969",
+    "anlageschwerpunkt": "Aktien Asien ex Japan",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "iShares MSCI EM Latin America UCITS ...",
+    "wkn": "AONA45",
+    "isin": "IEOOB27YCK28",
+    "anlageschwerpunkt": "Aktien Lateinamerika",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "iShares MSCI World Small Cap UCITS ..",
+    "wkn": "A2DWBY",
+    "isin": "IEOOBF4RFH31",
+    "anlageschwerpunkt": "Aktien Welt (mittlere/kleine Unternehmen)",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "iShares NASDAQ US Biotechnology U...",
+    "wkn": "A2DWAW",
+    "isin": "IEOOBYXG2H39",
+    "anlageschwerpunkt": "Aktien Biotech/Pharma",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "Janus Henderson Horizon Global Pro...",
+    "wkn": "AOMPOQ",
+    "isin": "LU0264738294",
+    "anlageschwerpunkt": "Immobilienaktien Welt",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "Janus Henderson Horizon Global Sma...",
+    "wkn": "A2PK9Q",
+    "isin": "LU1983261865",
+    "anlageschwerpunkt": "Aktien Welt (mittlere/kleine Unternehmen)",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "Janus Henderson Horizon Pan Europ...",
+    "wkn": "989229",
+    "isin": "LU0046217351",
+    "anlageschwerpunkt": "Aktien Europa (mittl./kleine Unt.)",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "JPM Global Equity Premium Income A...",
+    "wkn": "A3EHRE",
+    "isin": "IEOOO3UVYC20",
+    "anlageschwerpunkt": "Aktien Welt",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "JPM Total Emerging Markets Income",
+    "wkn": "A1lW5Y6",
+    "isin": "LU0974360454",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Aktien/Anleihen"
+  },
+  {
+    "page": 3,
+    "name": "Lazard Nordic High Yield Bond",
+    "wkn": "A3DTD2",
+    "isin": "IEQOOF8BEZE4",
+    "anlageschwerpunkt": "Anleihen Hochzins",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen (03. Hochzins kurze Restlaufzeiten)"
+  },
+  {
+    "page": 3,
+    "name": "LBBW Sicher Leben",
+    "wkn": "LB6BOM",
+    "isin": "DEOOOLB6BOM7",
+    "anlageschwerpunkt": "Aktien Riistung/Sicherheit",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "MEAG EuroBalance",
+    "wkn": "975745",
+    "isin": "DE0009757450",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Aktien/Anleihen"
+  },
+  {
+    "page": 3,
+    "name": "MFS Prudent Capital",
+    "wkn": "A2ANEB",
+    "isin": "LU1442549025",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Weites Benchmarking Aktien/Anleihen"
+  },
+  {
+    "page": 3,
+    "name": "Morgan Stanley - Global Convertible ...",
+    "wkn": "633596",
+    "isin": "LU0149084476",
+    "anlageschwerpunkt": "Wandelanleihen",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Anleihen (05. Unternehmensanleihen mittlere Restlaufzeiten)"
+  },
+  {
+    "page": 3,
+    "name": "Morgan Stanley - Global Opportunity...",
+    "wkn": "A1H6XK",
+    "isin": "LU0552385295",
+    "anlageschwerpunkt": "Aktien Welt",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "Nomura India Equity Fund",
+    "wkn": "A1C9ED",
+    "isin": "IEQOB3SHDY84",
+    "anlageschwerpunkt": "Aktien Indien",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "Nordea Global Stable Equity",
+    "wkn": "591135",
+    "isin": "LU0112467450",
+    "anlageschwerpunkt": "Aktien Welt",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "ODDO BHF Polaris Flexible",
+    "wkn": "AOMO003",
+    "isin": "LU0319572730",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Aktien/Anleihen"
+  },
+  {
+    "page": 3,
+    "name": "ODDO BHF Polaris Moderate",
+    "wkn": "A2JJ1S",
+    "isin": "DE000A2JJ1S3",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Weites Benchmarking Anleihen"
+  },
+  {
+    "page": 3,
+    "name": "OkoWorld OkoVision Classic",
+    "wkn": "974968",
+    "isin": "LU0061928585",
+    "anlageschwerpunkt": "Aktien Welt",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "OptoFlex |",
+    "wkn": "AlJ4YY",
+    "isin": "LU0834815101",
+    "anlageschwerpunkt": "Alt. Volatilitatsstra. - ausgewogen",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Zielrendite (Spezialitäten)"
+  },
+  {
+    "page": 3,
+    "name": "Phaidros Funds - Balanced",
+    "wkn": "AOMN91",
+    "isin": "LU0295585748",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Weites Benchmarking Aktien/Anleihen"
+  },
+  {
+    "page": 3,
+    "name": "Pictet - Quest Europe Sustainable Eq...",
+    "wkn": "750443",
+    "isin": "LU0144509717",
+    "anlageschwerpunkt": "Aktien Europa",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "Pictet - Robotics",
+    "wkn": "14199",
+    "isin": "LU1279334053",
+    "anlageschwerpunkt": "Aktien Technologie",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "Pictet - Timber",
+    "wkn": "A0QZ7T",
+    "isin": "LU0340559557",
+    "anlageschwerpunkt": "Aktien Wald/Holz",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "PIMCO Strategic Income Fund",
+    "wkn": "A1W76Y",
+    "isin": "IEOOBG800Q99",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen/Aktien (Anleihen > Aktien)"
+  },
+  {
+    "page": 3,
+    "name": "Renten Strategie K",
+    "wkn": "979952",
+    "isin": "DE0009799528",
+    "anlageschwerpunkt": "Anleihen Euro Kurz",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Anleihen (02. Staats- und Unternehmensanleihen kurze Restlaufzeiten)"
+  },
+  {
+    "page": 3,
+    "name": "Rentenstrategie MultiManager |",
+    "wkn": "A41FXL",
+    "isin": "LU3156336565",
+    "anlageschwerpunkt": "Anleihen Hochzins",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen (08. Unternehmens-, Hochzins-, Schwellenlanderanleihen rT pee"
+  },
+  {
+    "page": 3,
+    "name": "Robeco Asia-Pacific Equities",
+    "wkn": "988149",
+    "isin": "LU0084617165",
+    "anlageschwerpunkt": "Aktien Asien inklusive Japan",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "SN EE Enges Benchmarking Aktien"
+  },
+  {
+    "page": 3,
+    "name": "Robeco QI Emerging Markets Active ...",
+    "wkn": "AONDKJ",
+    "isin": "LU0329355670",
+    "anlageschwerpunkt": "Aktien",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 4,
+    "name": "Robeco Sustainable Water",
+    "wkn": "A2QBUQ",
+    "isin": "LU2146190835",
+    "anlageschwerpunkt": "Aktien Wassertechnologie",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 4,
+    "name": "Sauren Global Balanced",
+    "wkn": "930920",
+    "isin": "LU0106280836",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Zielrendite (Multi Asset)"
+  },
+  {
+    "page": 4,
+    "name": "Sauren Global Defensiv",
+    "wkn": "214466",
+    "isin": "LU0163675910",
+    "anlageschwerpunkt": "Vermögensverwalter - defensiv",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Zielrendite (Multi Asset)"
+  },
+  {
+    "page": 4,
+    "name": "Sauren Global Opportunities",
+    "wkn": "930921",
+    "isin": "LU0106280919",
+    "anlageschwerpunkt": "Vermögensverwalter - dynamisch",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 4,
+    "name": "Schroder ISF Asian Opportunities",
+    "wkn": "973045",
+    "isin": "LU0048388663",
+    "anlageschwerpunkt": "Aktien Asien ex Japan",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 4,
+    "name": "Schroder ISF Frontier Markets Equity",
+    "wkn": "A1C9QD",
+    "isin": "LU0562314715",
+    "anlageschwerpunkt": "Aktien Frontier Markets",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 4,
+    "name": "Schroder ISF Sustainable Euro Credit",
+    "wkn": "A2PXFB",
+    "isin": "LU2080993616",
+    "anlageschwerpunkt": "Unternehmensanleihen Euro",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Anleihen (05. Unternehmensanleihen mittlere Restlaufzeiten)"
+  },
+  {
+    "page": 4,
+    "name": "smarTrack balanced B",
+    "wkn": "A2PSGG",
+    "isin": "LU1717097338",
+    "anlageschwerpunkt": "50% Aktien/50% Anleihen",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien/Anleihen"
+  },
+  {
+    "page": 4,
+    "name": "smarTrack dynamic B",
+    "wkn": "A2PSGE",
+    "isin": "LU1717097684",
+    "anlageschwerpunkt": "Aktien Welt",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 4,
+    "name": "smarTrack growth B",
+    "wkn": "A2PSGF",
+    "isin": "LU1717097767",
+    "anlageschwerpunkt": "80% Aktien/20% Anleihen",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien/Anleihen"
+  },
+  {
+    "page": 4,
+    "name": "Swisscanto Portfolio Fund Sustainabl...",
+    "wkn": "A41MQN",
+    "isin": "LU2637080321",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Weites Benchmarking Aktien/Anleihen"
+  },
+  {
+    "page": 4,
+    "name": "T. Rowe Price - Diversified Income Bo...",
+    "wkn": "A2DW8B",
+    "isin": "LU1676121723",
+    "anlageschwerpunkt": "Anleihen Welt",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen (06. Staats- und Unternehmensanleihen mittlere a ee"
+  },
+  {
+    "page": 4,
+    "name": "terrAssisi Aktien | AMI",
+    "wkn": "984734",
+    "isin": "DE0009847343",
+    "anlageschwerpunkt": "Aktien Welt",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "ResteMeeneny: Enges Benchmarking Aktien"
+  },
+  {
+    "page": 4,
+    "name": "Triodos Pioneer Impact Fund",
+    "wkn": "A4039Q",
+    "isin": "LU2723591728",
+    "anlageschwerpunkt": "Aktien Welt (mittlere/kleine",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "UBS Core MSCI World UCITS ETF",
+    "wkn": "A2PKS5J",
+    "isin": "IEOOBD4TXV59",
+    "anlageschwerpunkt": "Aktien Welt",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "UBS Core S&P 500 UCITS ETF",
+    "wkn": "A1JVB5",
+    "isin": "1EOOB7K93397",
+    "anlageschwerpunkt": "Aktien USA",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "UBS MSCI ACWI Socially Responsible ...",
+    "wkn": "A2PL58",
+    "isin": "IEOOBDR55471",
+    "anlageschwerpunkt": "Aktien Welt",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "UBS MSCI World Socially Responsible ...",
+    "wkn": "A2PZBH",
+    "isin": "IEOOBK72HH44",
+    "anlageschwerpunkt": "Aktien Welt",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "US EquityFlex |",
+    "wkn": "A12E0R",
+    "isin": "LU1138397838",
+    "anlageschwerpunkt": "Alt. Volatilitatsstra. - dynamisch",
+    "ertrag": "ausschittend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "VanEck Defense UCITS ETF",
+    "wkn": "A3D9M1",
+    "isin": "IEQOOYYE6WK5",
+    "anlageschwerpunkt": "Aktien Riistung/Sicherheit",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "Vanguard EUR Corporate Bond UCITS ...",
+    "wkn": "A143JK",
+    "isin": "1E00BZ163G84",
+    "anlageschwerpunkt": "Unternehmensanleihen Europa",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen (05. Unternehmensanleihen mittlere Restlaufzeiten)"
+  },
+  {
+    "page": 5,
+    "name": "Vanguard EUR Eurozone Government...",
+    "wkn": "A143JL",
+    "isin": "1E00BZ163H91",
+    "anlageschwerpunkt": "Anleihen Euro",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Anleihen (04. Staatsanleihen mittlere Restlaufzeiten)"
+  },
+  {
+    "page": 5,
+    "name": "Vanguard FTSE Developed Europe UC...",
+    "wkn": "A1T8FS",
+    "isin": "IEOOB945VV12",
+    "anlageschwerpunkt": "Aktien Europa",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "Vontobel Fund - Commodity",
+    "wkn": "A2JKKO",
+    "isin": "LU1683488867",
+    "anlageschwerpunkt": "Rohstoffe",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Rohstoffe"
+  },
+  {
+    "page": 5,
+    "name": "Vontobel Fund - Global Environment...",
+    "wkn": "AORCVV",
+    "isin": "LU0384405519",
+    "anlageschwerpunkt": "Aktien nachhaltige Technologien",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "Wellington Enduring Infrastructure A...",
+    "wkn": "A2PGYQ",
+    "isin": "IEOOBH3VJH87",
+    "anlageschwerpunkt": "Aktien Infrastruktur",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "X of the Best - ausgewogen",
+    "wkn": "A1CVCD",
+    "isin": "LU0497150481",
+    "anlageschwerpunkt": "Vermögensverwalter - ausgewogen",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Aktien/Anleihen"
+  },
+  {
+    "page": 5,
+    "name": "X of the Best - dynamisch",
+    "wkn": "AOQSMC",
+    "isin": "LU0374994712",
+    "anlageschwerpunkt": "Aktien Welt",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Weites Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "Xtrackers Artificial Intelligence & Big ...",
+    "wkn": "A2N6LC",
+    "isin": "IEOOBGV5VN51",
+    "anlageschwerpunkt": "Aktien Technologie",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "Xtrackers DAX UCITS ETF",
+    "wkn": "DBX1DA",
+    "isin": "LU0274211480",
+    "anlageschwerpunkt": "Aktien Deutschland",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "Xtrackers Euro Stoxx 50 UCITS ETF",
+    "wkn": "DBX1EU",
+    "isin": "LU0274211217",
+    "anlageschwerpunkt": "Aktien Europa",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "Xtrackers MSCI Emerging Markets UC...",
+    "wkn": "A12GVR",
+    "isin": "IEOOBTJRMP35",
+    "anlageschwerpunkt": "Aktien Schwellenlander Welt",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "Xtrackers MSCI World Energy UCITS ETF",
+    "wkn": "A113FF",
+    "isin": "IEOOBM67HM91",
+    "anlageschwerpunkt": "Aktien Energie",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 5,
+    "name": "Xtrackers Nikkei 225 UCITS ETF",
+    "wkn": "DBXONJ",
+    "isin": "LU0839027447",
+    "anlageschwerpunkt": "Aktien Japan",
+    "ertrag": "ausschüttend",
+    "kennzeichen": "Enges Benchmarking Aktien"
+  },
+  {
+    "page": 6,
+    "name": "Xtrackers Target Mat Sept 2027 Corp ...",
+    "wkn": "DBXOVA",
+    "isin": "LU2673523218",
+    "anlageschwerpunkt": "Anleihen Euro kurz Laufzeit",
+    "ertrag": "ausschittend",
+    "kennzeichen": "BEIGE? BEE GERTNN EMERITTEET (10. Unternehmensanleihen Laufzeitfonds)"
+  },
+  {
+    "page": 6,
+    "name": "ZinsPlus",
+    "wkn": "AOMUWS",
+    "isin": "DEQOOAOMUWS7",
+    "anlageschwerpunkt": "Geldmarkt plus",
+    "ertrag": "thesaurierend",
+    "kennzeichen": "Zielrendite (Multi Asset)"
+  }
+]
